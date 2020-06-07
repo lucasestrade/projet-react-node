@@ -1,5 +1,10 @@
-Server : localhost:5000
-Client : localhost:3000
+# Server
+
+localhost:5000
+
+# Client
+
+localhost:3000
 
 # Installer les nodes modules :
 
