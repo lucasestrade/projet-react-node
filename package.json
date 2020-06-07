@@ -1,0 +1,21 @@
+{
+  "name": "projet-react-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "node ./server/server.js",
+    "client": "cd ./client && npm run start",
+    "app": "concurrently \"npm run server\" \"npm run client\"",
+    "i-server": "cd ./server && npm i",
+    "i-react": "cd ./client && npm i",
+    "i-serv-react": "concurrently \"npm run i-server\" \"npm run i-react\"",
+    "i-all": "npm i && npm run i-serv-react",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^5.2.0"
+  }
+}
