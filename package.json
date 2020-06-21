@@ -16,6 +16,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "concurrently": "^5.2.0"
+    "bcryptjs": "^2.4.3",
+    "concurrently": "^5.2.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.1.0"
   }
 }
