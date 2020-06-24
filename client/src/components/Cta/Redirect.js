@@ -3,11 +3,11 @@ import {
     Link
 } from "react-router-dom";
 
-function Redirect(params) {
+function Redirect({to, title, children, icon}) {
   return (
-      <Link to={params.to}>
-          {params.value}
-      </Link>
+    <Link to={to} title={title} className={icon ? "cta redirect" : "cta redirect link"}>
+        {children}
+    </Link>
   );
 }
 

@@ -1,13 +1,16 @@
-import Home from '../components/Home';
-import Login from '../components/Login';
+import providers from "./poviders";
+import Home from '../pages/Home';
+import Basket from '../pages/Basket';
 
 export const routes = [
     {
-        path: '/home',
+        path: providers.routes.HOME.PATH,
+        title: providers.routes.HOME.TITLE,
         Component: Home
     },
     {
-        path: '/login',
-        Component: Login
+        path: providers.routes.BASKET.PATH,
+        title: providers.routes.BASKET.TITLE,
+        Component: Basket
     }
 ]

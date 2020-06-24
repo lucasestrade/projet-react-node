@@ -3,19 +3,27 @@ import {
   BrowserRouter as Router,
   Route
 } from "react-router-dom";
+import AppHeader from "./components/Header";
 import { routes } from './providers/routes';
+import { AppProvider } from "./context/App";
 
 function App() {
+  
   return (
-    <Router>
-      {routes.map(({ path, Component }) => (
-        <Route exact
-          path={path} 
-          key={path} >
-            <Component />
-        </Route>
-      ))}
-    </Router>
+    <>
+      <Router>
+        <AppProvider>
+          <AppHeader />
+        </AppProvider>
+        {routes.map(({ path, title, Component }) => (
+          <Route exact
+            path={path} 
+            key={path} >
+              <Component title={title}/>
+          </Route>
+        ))}
+      </Router>
+    </>
   );
 }
 
