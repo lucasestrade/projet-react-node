@@ -130,10 +130,6 @@ body {
   padding: 10px;
 }
 
-section {
-  position: relative;
-}
-
 header {
   position: -webkit-sticky;
   position: sticky;
