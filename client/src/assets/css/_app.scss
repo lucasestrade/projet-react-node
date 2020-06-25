@@ -14,10 +14,29 @@ body{
     flex-wrap: wrap;
 }
 
+.column{
+    flex-direction: column;
+}
+
 .align-center{
     align-items: center;
 }
 
 .justify-between{
     justify-content: space-between;
+}
+
+.justify-center{
+    justify-content: center;
+}
+
+.page-content{
+    margin: auto;
+    width: 1000px;
+    max-width: calc(100% - 20px);
+    padding: 10px;
+}
+
+section{
+    position: relative;
 }

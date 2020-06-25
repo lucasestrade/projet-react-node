@@ -3,23 +3,22 @@ import {
   BrowserRouter as Router,
   Route
 } from "react-router-dom";
-import AppHeader from "./components/Header";
+import AppHeader from "./components/front/Header";
 import { routes } from './providers/routes';
-import { AppProvider } from "./context/App";
 
 function App() {
-  
+
   return (
     <>
       <Router>
-        <AppProvider>
-          <AppHeader />
-        </AppProvider>
+        <AppHeader />
         {routes.map(({ path, title, Component }) => (
           <Route exact
             path={path} 
             key={path} >
-              <Component title={title}/>
+              <section className="page-content">
+                <Component title={title}/>
+              </section>
           </Route>
         ))}
       </Router>

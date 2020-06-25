@@ -1,8 +1,11 @@
 // COLORS
 $mainColor: #485A99;
 $secondaryColor: #333333;
+$thirdColor: #e3e3e3;
 $mainWhite: #FFFFFF;
 $mainShadowColor: #d1d1d1;
+$mainFilter: rgba(0, 0, 0, 0.7);
+$titleContentBackground: linear-gradient(180deg, $thirdColor 54%, $mainWhite 100%);
 
 // SHADOWS
 $mainBoxShadow: 1px -1px 30px $mainShadowColor;
@@ -12,3 +15,6 @@ $mainTransitionDuration: 0.2s;
 
 // BORDER
 $mainBorderRadius: 5px;
+
+// FONT-SIZE
+$firstTitleFontSize: 19px

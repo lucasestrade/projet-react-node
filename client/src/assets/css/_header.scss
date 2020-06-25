@@ -30,5 +30,46 @@ header{
                 @include icon-hover;
             }
         }
+
+        & .header-burgermenu{
+            width: 30px;
+            fill: $mainColor;
+            transition: all $mainTransitionDuration;
+
+            &:hover{
+                @include icon-hover;
+            }
+        }
+    }
+
+    & .phone-menu{
+        position: fixed;
+        z-index: 10000;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 200px;
+        max-width: 100%;
+        background-color: $mainWhite;
+
+        & .block-phone-menu-logo{
+            padding: 20px;
+
+            & .phone-menu-logo{
+                width: 80px;
+                fill: $mainColor;
+            }
+        }
+    }
+
+    & .phone-menu-filter{
+        position: fixed;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-color: $mainFilter;
+        border: none;
     }
 }

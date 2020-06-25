@@ -1,16 +1,23 @@
 import React, { useEffect } from 'react';
+import ContentHeader from "../../components/front/ContentHeader";
+import { HomeProvider } from "../../context/Home";
+import ContentHome from "../../components/front/ContentHome";
 
 function Home({title}) {
-    //console.log(selectors.getMenuDisplayIsPhone());
+    
     useEffect(() => {
         document.title = title;
-       
     });
     
     return (
-        <div>
-
-        </div>
+        <section className="section-home">
+            <ContentHeader>
+                Articles disponibles
+            </ContentHeader>
+            <HomeProvider>
+                <ContentHome />
+            </HomeProvider>
+        </section>
     );
 }
 

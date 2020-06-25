@@ -1,10 +1,10 @@
 import React, { createContext, useReducer } from "react";
 import {
-  initialState as appInitialState,
-  reducer as appReducer
-} from "./reducers/app";
+  initialState as homeInitialState,
+  reducer as homeReducer
+} from "./reducers/home";
 
-const AppContext = createContext(null);
+const HomeContext = createContext(null);
 
 function combineReducers(reducerDict) {
   return function (state = {}, action) {
@@ -16,21 +16,21 @@ function combineReducers(reducerDict) {
 }
 
 const reducers = combineReducers({
-  app: appReducer
+  home: homeReducer
 });
 
 const initialState = {
-  app: appInitialState,
+  home: homeInitialState,
 };
 
-export const AppProvider = ({ children }) => {
+export const HomeProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducers, initialState);
 
   return (
-    <AppContext.Provider value={{ state, dispatch }}>
+    <HomeContext.Provider value={{ state, dispatch }}>
         {children}
-    </AppContext.Provider>
+    </HomeContext.Provider>
   );
 };
 
-export default AppContext;
+export default HomeContext;

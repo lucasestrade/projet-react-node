@@ -5,7 +5,7 @@ import {
 
 function Redirect({to, title, children, icon}) {
   return (
-    <Link to={to} title={title} className={icon ? "cta redirect" : "cta redirect link"}>
+    <Link to={to} title={title} className={icon ? "redirect" : "redirect link"}>
         {children}
     </Link>
   );

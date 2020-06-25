@@ -1,7 +1,7 @@
 import React from 'react';
-import providers from "../../../providers/poviders";
+import providers from "../../../../providers/poviders";
 
-function Logo({ logoStyle }) {
+function LogoIcon({ logoStyle }) {
     return (
         <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
             className={logoStyle} viewBox="0 0 788.000000 493.000000"
@@ -13,4 +13,4 @@ function Logo({ logoStyle }) {
     );
 }
 
-export default Logo;
+export default LogoIcon;

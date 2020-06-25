@@ -1,3 +1,7 @@
+button{
+    cursor: pointer;
+}
+
 .redirect{
     position: relative;
     font-weight: bold;
@@ -12,6 +16,7 @@
 
 .link{
     padding: 10px;
+    text-align: center;
 
     &:after{
         content: "";
@@ -31,4 +36,11 @@
             width: 50%;
         }
     }
+}
+
+.cta-nude{
+    width: 40px;
+    margin: 10px;
+    background-color: transparent;
+    border: none;
 }
