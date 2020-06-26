@@ -17,7 +17,8 @@ const useHome = () => {
   };
 
   const selectors = {
-    getHomeLoaded: () => homeState.isHomeLoaded
+    getHomeLoaded: () => homeState.isHomeLoaded,
+    getProducts: () => homeState.products
   };
 
   return { selectors, actions };

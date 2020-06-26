@@ -3,7 +3,7 @@ import Redirect from '../../Cta/Redirect';
 import BurgerMenuIcon from '../../Icon/BurgerMenu';
 import LogoIcon from "../../Icon/Logo";
 import BasketIcon from "../../Icon/Basket";
-import providers from "../../../../providers/poviders";
+import providers from "../../../../providers/providers";
 import Cta from '../../Cta/Cta';
 
 function HeaderPhone({ burgerMenuClickAction, isOpen }){

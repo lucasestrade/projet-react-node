@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import useHome from "../../../hooks/useHome";
 import Loader from "../Loader";
+import ProductCard from "../ProductCard";
 
 function ContentHome(){
 
@@ -11,27 +12,38 @@ function ContentHome(){
         if(!isHomeLoaded){
             actions.changeHomeLoaded(true);
         }
-        //setTimeout(() => {
-            //actions.changeHomeLoaded(true);
-        //}, 2000)
     })
 
     return(
         isHomeLoaded 
-            ?
-                displayHome()
-            :
+            ?(
+                <div className="product-cards-content flex justify-between">
+                    {displayProductCards(selectors)}
+                </div>
+            ):
                 <Loader />
     )
 
 }
 
-function displayHome(){
-    return(
-        <div>
-            tiens donc un produit
-        </div>
-    )
+function displayProductCards(selectors){
+    let products = selectors.getProducts();
+
+    return products.map(product => {
+        return (
+            <ProductCard
+                key={product.id} 
+                id={product.id}
+                name={product.name}
+                description={product.description}
+                date={product.date}
+                background={product.background}
+                price={product.price}
+                quantity={product.quantity}
+                seller={product.seller}
+            />
+        )
+    })
 }
 
 export default ContentHome;

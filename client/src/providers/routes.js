@@ -1,4 +1,4 @@
-import providers from "./poviders";
+import providers from "./providers";
 import Home from '../pages/Home';
 import Basket from '../pages/Basket';
 

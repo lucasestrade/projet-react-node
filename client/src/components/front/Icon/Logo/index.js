@@ -1,5 +1,5 @@
 import React from 'react';
-import providers from "../../../../providers/poviders";
+import providers from "../../../../providers/providers";
 
 function LogoIcon({ logoStyle }) {
     return (

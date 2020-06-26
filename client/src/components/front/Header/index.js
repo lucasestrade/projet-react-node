@@ -2,6 +2,7 @@ import React from 'react';
 import HeaderDesktop from "./type/desktop";
 import HeaderPhone from "./type/phone";
 import useApp from "../../../hooks/useApp";
+import providers from '../../../providers/providers';
 
 function AppHeader(){
 
@@ -29,7 +30,7 @@ function AppHeader(){
 }
 
 function checkHeaderType(actions){
-    if(window.innerWidth < 800){
+    if(window.innerWidth < providers.phone.MAX_WIDTH){
         actions.changeMenuDisplay(true);
     }else{
         actions.changeMenuDisplay(false);

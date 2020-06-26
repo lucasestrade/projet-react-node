@@ -3,9 +3,9 @@ import {
     Link
 } from "react-router-dom";
 
-function Redirect({to, title, children, icon}) {
+function Redirect({to, title, children, icon, card}) {
   return (
-    <Link to={to} title={title} className={icon ? "redirect" : "redirect link"}>
+    <Link to={to} title={title} className={icon ? "redirect" : card ? "redirect-card" : "redirect link"}>
         {children}
     </Link>
   );

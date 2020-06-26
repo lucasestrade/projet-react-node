@@ -30,9 +30,19 @@ body{
     justify-content: center;
 }
 
+.justify-end{
+    justify-content: flex-end;
+}
+
 .page-content{
     margin: auto;
-    width: 1000px;
+    width: $visibleWidth;
     max-width: calc(100% - 20px);
     padding: 10px;
+}
+
+.background{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
