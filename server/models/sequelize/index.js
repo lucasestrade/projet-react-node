@@ -1,23 +1,21 @@
 const sequelize = require("../../lib/sequelize");
-const Client = require("./Client");
-const Basket = require("./Basket");
-const BasketHistory = require("./BasketHistory");
-const Product = require("./Product");
-const Trader = require("./Trader");
-const Manager = require("./Manager");
+const User = require("./User");
+const Credential = require("./Credential");
+const Transaction = require("./Transaction");
+const Merchant = require("./Merchant");
 
 sequelize
-  .sync({ alter: true })
+  .sync({ 
+    alter: true ,
+    force: true
+  })
   .then((result) => console.log("Sync OK"))
   .catch((result) => console.error("Sync KO"));
 
 module.exports = {
   sequelize,
-  Product,
-  Basket,
-  BasketHistory,
-  Client,
-  Trader,
-  Manager,
-  
+  User,
+  Credential,
+  Transaction,
+  Merchant,
 };
