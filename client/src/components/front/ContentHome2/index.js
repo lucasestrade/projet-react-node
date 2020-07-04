@@ -3,7 +3,7 @@ import useHome from "../../../hooks/useHome";
 import Loader from "../Loader";
 import ProductCard from "../ProductCard";
 
-function ContentHome(){
+function ContentHome2(){
 
     const { selectors, actions } = useHome();
     let isHomeLoaded = selectors.getHomeLoaded();
@@ -15,7 +15,7 @@ function ContentHome(){
     })
 
     function onClickValidateBasket(el){
-        actions.sendSeller1Basket(selectors.getPriceSeller1());
+        actions.sendSeller2Basket(selectors.getPriceSeller2());
     }
 
     return(
@@ -34,7 +34,7 @@ function ContentHome(){
 }
 
 function displayProductCards(selectors){
-    let products = selectors.getProducts1();
+    let products = selectors.getProducts2();
 
     return products.map(product => {
         return (
@@ -54,4 +54,4 @@ function displayProductCards(selectors){
     })
 }
 
-export default ContentHome;
+export default ContentHome2;

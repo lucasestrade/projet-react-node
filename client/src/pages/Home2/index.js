@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import ContentHeader from "../../components/front/ContentHeader";
 import { HomeProvider } from "../../context/Home";
-import ContentHome from "../../components/front/ContentHome";
+import ContentHome2 from "../../components/front/ContentHome2";
 
-function Home({title}) {
+function Home2({title}) {
     
     useEffect(() => {
         document.title = title;
@@ -15,10 +15,10 @@ function Home({title}) {
                 Articles disponibles
             </ContentHeader>
             <HomeProvider>
-                <ContentHome />
+                <ContentHome2 />
             </HomeProvider>
         </section>
     );
 }
 
-export default Home;
+export default Home2;

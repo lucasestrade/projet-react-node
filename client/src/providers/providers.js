@@ -90,6 +90,10 @@ const providers = {
             PATH : "/",
             TITLE : "Accueil"
         },
+        HOME2 : {
+            PATH : "/seller2",
+            TITLE : "Accueil 2"
+        },
         LOGIN : {
             PATH : "/login",
             TITLE : "Connexion"
@@ -101,6 +105,10 @@ const providers = {
         BASKET : {
             PATH : "/basket",
             TITLE : "Mon panier"
+        },
+        PRODUCT : {
+            PATH : "/product/:reference/:name",
+            TITLE : "Produit | ",
         }
     }
 }

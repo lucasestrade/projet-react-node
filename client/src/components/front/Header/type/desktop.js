@@ -23,13 +23,6 @@ function HeaderDesktop(){
                         </Redirect>
                     </div>
                 </div>
-                <div className="flex align-center">
-                    <div>
-                        <Redirect icon={true} to={providers.routes.BASKET.PATH} title={providers.routes.BASKET.TITLE} >
-                            <Basket basketStyle="header-basket" />
-                        </Redirect>
-                    </div>
-                </div>
             </div>
         </header>
     )

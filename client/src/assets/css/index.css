@@ -272,13 +272,7 @@ header .phone-menu-filter {
           animation-delay: -0.5s;
 }
 
-.product-cards-content .redirect-card {
-  outline: none;
-  text-decoration: none;
-  margin: 10px;
-}
-
-.product-cards-content .redirect-card .product-card {
+.product-cards-content .product-card {
   border-radius: 5px;
   width: 300px;
   max-width: 100%;
@@ -286,21 +280,22 @@ header .phone-menu-filter {
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
   border: 1px solid #e3e3e3;
+  margin: 10px;
 }
 
-.product-cards-content .redirect-card .product-card:hover {
+.product-cards-content .product-card:hover {
   -webkit-transform: translateY(-3px);
           transform: translateY(-3px);
   -webkit-box-shadow: 0px 47px 41px -26px #d1d1d1;
           box-shadow: 0px 47px 41px -26px #d1d1d1;
 }
 
-.product-cards-content .redirect-card .product-card .background-product-card {
+.product-cards-content .product-card .background-product-card {
   width: 100%;
   height: 50%;
 }
 
-.product-cards-content .redirect-card .product-card .background-product-card .product-price {
+.product-cards-content .product-card .background-product-card .product-price {
   height: 20px;
   margin: 5px;
   padding: 5px;
@@ -309,59 +304,55 @@ header .phone-menu-filter {
   color: #FFFFFF;
 }
 
-.product-cards-content .redirect-card .product-card .content-product-card {
+.product-cards-content .product-card .content-product-card {
   position: relative;
   padding: 5px;
   height: calc(50% - 10px);
 }
 
-.product-cards-content .redirect-card .product-card .content-product-card p {
+.product-cards-content .product-card .content-product-card p {
   margin-top: 5px;
   margin-bottom: 5px;
   color: #485A99;
 }
 
-.product-cards-content .redirect-card .product-card .content-product-card label {
+.product-cards-content .product-card .content-product-card label {
   color: #333333;
   font-size: 12px;
 }
 
-.product-cards-content .redirect-card .product-card .content-product-card .product-name {
+.product-cards-content .product-card .content-product-card .product-name {
   font-weight: bold;
   overflow: hidden;
   word-break: break-word;
   max-height: 40px;
 }
 
-.product-cards-content .redirect-card .product-card .content-product-card .product-description {
+.product-cards-content .product-card .content-product-card .product-description {
   overflow: hidden;
-  height: 90px;
   word-break: break-word;
 }
 
-.product-cards-content .redirect-card .product-card .content-product-card .bottom-product-card {
+.product-cards-content .product-card .content-product-card .bottom-product-card {
   position: absolute;
   bottom: 0;
   width: calc(100% - 10px);
 }
 
-.product-cards-content .redirect-card .product-card .content-product-card .bottom-product-card .product-seller {
+.product-cards-content .product-card .content-product-card .bottom-product-card .product-seller {
   height: 20px;
   word-break: break-all;
   overflow: hidden;
   width: 75%;
 }
 
-.product-cards-content .redirect-card .product-card .content-product-card .bottom-product-card .product-quantity {
+.product-cards-content .product-card .content-product-card .bottom-product-card .product-quantity {
   text-align: right;
   width: 20%;
 }
 
 @media screen and (max-width: 500px) {
-  .product-cards-content .redirect-card {
-    width: 100%;
-  }
-  .product-cards-content .redirect-card .product-card {
+  .product-cards-content .product-card {
     width: 100%;
     margin: 0;
     margin-bottom: 5px;

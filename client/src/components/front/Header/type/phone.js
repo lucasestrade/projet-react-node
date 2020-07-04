@@ -19,11 +19,6 @@ function HeaderPhone({ burgerMenuClickAction, isOpen }){
                     </div>
                 </div>
                 <div className="flex align-center">
-                    <div>
-                        <Redirect icon={true} to={providers.routes.BASKET.PATH} title={providers.routes.BASKET.TITLE} >
-                            <BasketIcon basketStyle="header-basket" />
-                        </Redirect>
-                    </div>
                     <div className="header-menu flex align-center">
                         <Cta ctaStyle="cta-nude" onClick={burgerMenuClickAction}>
                             <BurgerMenuIcon burgerMenuStyle="header-burgermenu" />
