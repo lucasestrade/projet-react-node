@@ -9,10 +9,10 @@ const routerManager = (app) => {
     app.use("/")
   //app.use("/", SecurityRouter);
   //app.use(verifyToken);
-  app.use("/users", ClientRouter);
-  app.use("/merchants", BasketRouter);
-  app.use("/credentials", BasketHistoryRouter);
-  app.use("/transactions", ProductRouter);
+    app.use("/users", UserRouter);
+    app.use("/merchants", MerchantRouter);
+    app.use("/credentials", CredentialRouter);
+    app.use("/transactions", TransactionRouter);
 };
 
 module.exports = routerManager;

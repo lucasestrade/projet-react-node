@@ -1,23 +1,9 @@
 const denormalize = require("./denormalizationTransaction");
 const Transaction = require("../Transaction");
+const Merchant = require("../Merchant");
 
-/*
-const onHookMovie = (movie) => {
-    movie.Actors.forEach((actor) => {
-        denormalize(User, actor.id);
-    });
-    movie.Directors.forEach((director) => {
-        denormalize(User, director.id);
-    });
-};
-Movie.addHook("afterCreate", onHookMovie);
-Movie.addHook("afterUpdate", onHookMovie);
-Movie.addHook("afterDestroy", onHookMovie);
+const onHookTransaction = (merchant) => denormalize(Transaction, merchant.id);
 
-
-
-const onHookArticle = (article) => denormalize(User, article.user.id);
-Article.addHook("afterCreate", onHookArticle);
-Article.addHook("afterUpdate", onHookArticle);
-Article.addHook("afterDestroy", onHookArticle);
-*/
+Merchant.addHook("afterCreate", onHookTransaction);
+Merchant.addHook("afterUpdate", onHookTransaction);
+Merchant.addHook("afterDestroy", onHookTransaction);
