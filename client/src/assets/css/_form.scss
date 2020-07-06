@@ -1,0 +1,15 @@
+.form-paiement{
+    margin: auto;
+    max-width: 100%;
+
+    & input{
+        padding: 10px;
+        margin-bottom: 5px;
+        width: 300px;
+        max-width: 100%;
+    }
+
+    & .cta-submit{
+        width: 100%;
+    }
+}

@@ -358,4 +358,20 @@ header .phone-menu-filter {
     margin-bottom: 5px;
   }
 }
+
+.form-paiement {
+  margin: auto;
+  max-width: 100%;
+}
+
+.form-paiement input {
+  padding: 10px;
+  margin-bottom: 5px;
+  width: 300px;
+  max-width: 100%;
+}
+
+.form-paiement .cta-submit {
+  width: 100%;
+}
 /*# sourceMappingURL=index.css.map */

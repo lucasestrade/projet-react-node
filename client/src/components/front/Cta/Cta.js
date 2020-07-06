@@ -1,9 +1,9 @@
 import React from "react";
 
-function Cta({ctaStyle, onClick, children}) {
+function Cta({ctaStyle, onClick, submit, children}) {
   return (
     <button className={ctaStyle} 
-    onClick={onClick}>
+    onClick={onClick} type={submit ? "submit" : null}>
         {children}
     </button>
   );

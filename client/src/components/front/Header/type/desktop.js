@@ -1,7 +1,6 @@
 import React from 'react';
 import Redirect from '../../Cta/Redirect';
 import Logo from "../../Icon/Logo";
-import Basket from "../../Icon/Basket";
 import providers from "../../../../providers/providers";
 
 function HeaderDesktop(){

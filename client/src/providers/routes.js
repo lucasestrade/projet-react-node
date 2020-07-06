@@ -1,8 +1,7 @@
 import providers from "./providers";
 import Home from '../pages/Home';
 import Home2 from '../pages/Home2';
-import Basket from '../pages/Basket';
-import Product from '../pages/Product';
+import Paiement from '../pages/Paiement';
 
 export const routes = [
     {
@@ -16,13 +15,8 @@ export const routes = [
         Component: Home2
     },
     {
-        path: providers.routes.BASKET.PATH,
-        title: providers.routes.BASKET.TITLE,
-        Component: Basket
-    },
-    {
-        path: providers.routes.PRODUCT.PATH,
-        title: providers.routes.PRODUCT.TITLE,
-        Component: Product
+        path: providers.routes.PAIEMENT.PATH,
+        title: providers.routes.PAIEMENT.TITLE,
+        Component: Paiement
     }
 ]
