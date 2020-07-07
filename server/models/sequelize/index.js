@@ -6,8 +6,7 @@ const Merchant = require("./Merchant");
 
 sequelize
   .sync({ 
-    alter: true ,
-    force: true
+    alter: true
   })
   .then((result) => console.log("Sync OK"))
   .catch((result) => console.error("Sync KO"));

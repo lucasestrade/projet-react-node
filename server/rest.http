@@ -1,0 +1,83 @@
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+  "email": "superman2-k@hotmail.fr",
+  "password": "superman",
+  "role": "ADMIN"
+}
+
+###
+GET http://localhost:5000/users?email=superman-k@hotmail.fr
+
+###
+GET http://localhost:5000/users/1
+
+###
+POST http://localhost:5000/transactions
+Content-Type: application/json
+
+{
+  "billing_adress": "superman2-k@hotmail.fr",
+  "delivery_adress": "superman2",
+  "status": "ADMIN",
+  "price": 10.00,
+  "MerchantId" : 1
+}
+
+###
+GET http://localhost:5000/transactions?billing_adress=superman2-k@hotmail.fr
+
+###
+GET http://localhost:5000/transactions/1
+
+###
+POST http://localhost:5000/merchants
+Content-Type: application/json
+
+{
+  "name": "test_name2",
+  "url_validation": "test_url_validation",
+  "url_echec": "test_url_echec",
+  "kbis": "test_kbis",
+  "email": "email2@test.fr",
+  "adresse": "test_adresse",
+  "repayment_currency": "test_repayment_currency",
+  "verify": false
+
+}
+
+###
+GET http://localhost:5000/merchants?name=test_name
+Content-Type: application/json
+
+###
+GET http://localhost:5000/merchants/1
+
+
+###
+POST http://localhost:5000/credentials
+Content-Type: application/json
+
+{
+  "client_token": "test_client_token",
+  "client_secret": "test_client_secret"
+
+}
+
+###
+GET http://localhost:5000/credentials?client_token=test_client_token
+
+###
+GET http://localhost:5000/credentials/1
+
+
+
+###
+POST http://localhost:5000/login_check
+Content-Type: application/json
+
+{
+  "email": "superman-k@hotmail.fr",
+  "password": "superman"
+}
