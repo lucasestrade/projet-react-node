@@ -1,8 +1,15 @@
 import React from "react";
 import FormPaiement from '../Form/FormPaiement';
 import Cta from '../Cta/Cta';
+import { useHistory } from 'react-router-dom';
 
 function ContentPaiement(){
+
+    let history = useHistory();
+
+    function onClickCancelPaiement(){
+        history.push('/');
+    }
 
     return(
         <div className="block-paiement flex column">
@@ -18,11 +25,6 @@ function ContentPaiement(){
         </div>
     );
 
-}
-
-function onClickCancelPaiement(event){
-    event.preventDefault();
-    alert("cancel");
 }
 
 export default ContentPaiement;

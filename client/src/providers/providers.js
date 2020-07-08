@@ -68,6 +68,10 @@ const providers = {
         PAIEMENT : {
             PATH : "/paiement",
             TITLE : "Paiement"
+        },
+        PSP : {
+            PATH : "/psp",
+            TITLE : "Validation de la transaction..."
         }
     }
 }
