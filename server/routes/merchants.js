@@ -57,7 +57,16 @@ router.get("/:id", (req, res) => {
     .catch((err) => res.sendStatus(500));
 });
 
-
+// PUT
+router.put("/:id", async (req, res) => {
+  if(req.body.password){
+    const salt = await bcrypt.genSalt();
+    req.body.password = await bcrypt.hash(req.body.password, salt);
+  }
+  Merchant.update(req.body, { returning: true, where: { id: req.params.id } })
+  .then(res.json({status:"updated"}))
+    .catch((err) => res.sendStatus(500));
+});
 
 // DELETE
 router.delete("/:id", (req, res) => {

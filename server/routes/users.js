@@ -1,6 +1,7 @@
 const express = require("express");
 const User = require("../models/sequelize/User");
 const { ValidationError, Op } = require("sequelize");
+const bcrypt = require("bcryptjs");
 //const verifyToken = require("../middlewares/verifyToken");
 //const { Article } = require("../models/sequelize");
 const router = express.Router();
@@ -46,7 +47,16 @@ router.get("/:id", (req, res) => {
     .catch((err) => res.sendStatus(500));
 });
 
-
+// PUT
+router.put("/:id", async (req, res) => {
+  if(req.body.password){
+    const salt = await bcrypt.genSalt();
+    req.body.password = await bcrypt.hash(req.body.password, salt);
+  }
+  User.update(req.body, { returning: true, where: { id: req.params.id } })
+  .then(res.json({status:"updated"}))
+    .catch((err) => res.sendStatus(500));
+});
 
 // DELETE
 router.delete("/:id", (req, res) => {
