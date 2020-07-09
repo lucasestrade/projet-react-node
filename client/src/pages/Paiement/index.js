@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import ContentHeader from "../../components/front/ContentHeader";
 import ContentPaiement from "../../components/front/ContentPaiement";
+import { PaiementProvider } from "../../context/Paiement";
 
 function Paiement({title}) {
     
@@ -13,7 +14,9 @@ function Paiement({title}) {
             <ContentHeader> 
                 Paiement
             </ContentHeader>
-            <ContentPaiement />
+            <PaiementProvider>
+                <ContentPaiement />
+            </PaiementProvider>
         </section>
     );
 }

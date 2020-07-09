@@ -2,14 +2,17 @@ import React from 'react';
 import Submit from '../../Cta/Submit';
 import Input from '../../Input';
 import { useHistory } from 'react-router-dom';
+import usePaiement from "../../../../hooks/usePaiement";
 
-function FormPaiement({redirect}){
+function FormPaiement({transacid}){
 
     let history = useHistory();
+    const { actions, selectors } = usePaiement();
 
     function onClickSubmitPaiement(event){
         event.preventDefault();
-        history.push(redirect);
+        actions.changePaiementStatus("VALIDATE");
+        history.push('/psp/' + transacid);
     }
 
     return(

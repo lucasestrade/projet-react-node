@@ -70,7 +70,7 @@ const providers = {
             TITLE : "Paiement"
         },
         PSP : {
-            PATH : "/psp",
+            PATH : "/psp/:id",
             TITLE : "Validation de la transaction..."
         },
         VALIDATE_PAIEMENT : {

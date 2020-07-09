@@ -1,19 +1,25 @@
 import React, { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
 
 function ValidatePaiement({title}) {
-    
-    let params = useParams();
+
+    redirection();
 
     useEffect(() => {
         document.title = title;
     });
-    console.log(params.id);
+
     return (
         <section className="section-validate-paiement">
-           aaaaaa
+           <p>Merci pour votre achat. Vous aller être redirigé vers le site marchand.</p>
+           <p>Si vous n'êtes pas automatiquement redirigé cliquez sur le lien suivant : <a href="/">Retour vers le site</a></p>
         </section>
     );
+}
+
+function redirection(){
+    setTimeout(function(){
+        window.location = "/";
+    }, 5000)
 }
 
 export default ValidatePaiement;

@@ -1,8 +1,8 @@
 import React from "react";
 
-function ContentPSP(){
+function ContentPSP({transacid}){
 
-    redirection();
+    redirection(transacid);
 
     return(
         <div className="block-psp">
@@ -12,9 +12,9 @@ function ContentPSP(){
 
 }
 
-function redirection(){
+function redirection(transacid){
     setTimeout(function(){
-        window.location = "/";
+        window.location = JSON.parse(window.localStorage.getItem(transacid)).validation_url;
     }, 5000);
 }
 

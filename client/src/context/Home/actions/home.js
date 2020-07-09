@@ -1,5 +1,5 @@
 export function sendSeller1Basket(price){
-    fetch("/fff", {
+    fetch("http://localhost:8889/transactions", {
         method: "POST",
         body: JSON.stringify({
             status: "ENCOURS",
@@ -21,7 +21,7 @@ export function sendSeller1Basket(price){
 }
 
 export function sendSeller2Basket(price){
-    fetch("/fff", {
+    fetch("http://localhost:8889/transactions", {
         method: "POST",
         body: JSON.stringify({
             status: "ENCOURS",

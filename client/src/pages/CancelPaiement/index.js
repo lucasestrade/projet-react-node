@@ -1,19 +1,25 @@
 import React, { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
 
 function CancelPaiement({title}) {
     
-    let params = useParams();
+    redirection();
 
     useEffect(() => {
         document.title = title;
     });
-    console.log(params.id);
+
     return (
         <section className="section-cancel-paiement">
-           aaaaaa
+           <p>Votre paiement a été annulé. Vous allez être redirigé automatiquement vers le site marchand.</p>
+           <p>Si vous n'êtes pas automatiquement redirigé cliquez sur le lien suivant : <a href="/">Retour vers le site marchand</a></p>
         </section>
     );
+}
+
+function redirection(){
+    setTimeout(function(){
+        window.location = "/";
+    }, 5000)
 }
 
 export default CancelPaiement;
