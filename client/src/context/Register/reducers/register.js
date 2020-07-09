@@ -1,18 +1,15 @@
 export const initialState = {
-  avg: 0,
-  transacPerDate: []
-};
+ 
+  };
   
 export const reducer = (state, action) => {
     switch (action.type) {
-      case "CHANGE_DATAS":
+      case "CHANGE_FORM_DISPLAY":
         return {
           ...state,
-          avg: action.payload1,
-          transacPerDate: action.payload2
-        }
+          infoForm: action.payload,
+        };
       default:
         return state;
     }
 };
-  

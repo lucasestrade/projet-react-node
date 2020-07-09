@@ -80,7 +80,24 @@ const providers = {
         CANCEL_PAIEMENT : {
             PATH : "/cancel_paiement/:id",
             TITLE : "Commande annulée"
+        },
+        REGISTER : {
+            PATH : "/register",
+            TITLE : "Inscription"
+        },
+        DASHBOARD : {
+            PATH : "/dashboard",
+            TITLE : "Dashboard"
+        },
+        PARAMETERS : {
+            PATH : "/parameters",
+            TITLE : "Paramètres"
+        },
+        HISTORY : {
+            PATH : "/history",
+            TITLE : "Historique"
         }
+
     }
 }
 

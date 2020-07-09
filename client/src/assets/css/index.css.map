@@ -14,7 +14,8 @@
         "_loader.scss",
         "_productCard.scss",
         "_form.scss",
-        "_dashboard.scss"
+        "_dashboard.scss",
+        "_productCard.scss"
     ],
     "names": [],
     "file": "index.css"

@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import ContentHeader from '../../components/front/ContentHeader';
-import { DashboardProvider } from '../../context/Dashboard';
+import { HistoryProvider } from '../../context/History';
 import { SidebarProvider } from '../../context/SideBar';
-import ContentDashboard from '../../components/back/ContentDashboard';
+import ContentHistory from '../../components/back/ContentHistory';
 import ContentSidebar from '../../components/back/ContentSidebar';
 
 
-function Dashbord({ title }) {
+function History({ title }) {
 
     useEffect(() => {
         document.title = title;
@@ -15,18 +15,18 @@ function Dashbord({ title }) {
     return (
         <section className="section-dashboad">
             <ContentHeader>
-                Dashboard
+                Historique
             </ContentHeader>
             <div className="flex">
                 <SidebarProvider>
                     <ContentSidebar />
                 </SidebarProvider>
-                <DashboardProvider>
-                    <ContentDashboard />
-                </DashboardProvider>
+                <HistoryProvider>
+                    <ContentHistory />
+                </HistoryProvider>
             </div>
         </section>
     );
 }
 
-export default Dashbord;
+export default History;
