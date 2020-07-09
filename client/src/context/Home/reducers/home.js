@@ -11,7 +11,7 @@ export const initialState = {
           background: "",
           price: 15,
           quantity: 7,
-          seller: "Le vendeur 1"
+          seller: 1
         },
         {
           id: 2,
@@ -22,7 +22,7 @@ export const initialState = {
           background: "",
           price: 15,
           quantity: 7,
-          seller: "Le vendeur 1"
+          seller: 1
         },
         {
           id: 3,
@@ -33,7 +33,7 @@ export const initialState = {
           background: "",
           price: 15,
           quantity: 7,
-          seller: "Le vendeur 1"
+          seller: 1
         },
         {
           id: 4,
@@ -44,7 +44,7 @@ export const initialState = {
           background: "",
           price: 15,
           quantity: 7,
-          seller: "Le vendeur 1"
+          seller: 1
         },
         {
           id: 5,
@@ -55,7 +55,7 @@ export const initialState = {
           background: "",
           price: 15,
           quantity: 7,
-          seller: "Le vendeur 1"
+          seller: 1
         },
         {
           id: 6,
@@ -66,7 +66,7 @@ export const initialState = {
           background: "",
           price: 15,
           quantity: 7,
-          seller: "Le vendeur 1"
+          seller: 1
         },
         {
           id: 7,
@@ -77,7 +77,7 @@ export const initialState = {
           background: "",
           price: 15,
           quantity: 7,
-          seller: "Le vendeur 1"
+          seller: 1
         },
         {
           id: 8,
@@ -88,7 +88,7 @@ export const initialState = {
           background: "",
           price: 15,
           quantity: 7,
-          seller: "Le vendeur 1"
+          seller: 1
         },
         {
           id: 9,
@@ -99,7 +99,7 @@ export const initialState = {
           background: "",
           price: 15,
           quantity: 7,
-          seller: "Le vendeur 1"
+          seller: 1
         }
       ],
       seller2: [
@@ -112,7 +112,7 @@ export const initialState = {
           background: "",
           price: 15,
           quantity: 7,
-          seller: "Le vendeur 2"
+          seller: 2
         },
         {
           id: 2,
@@ -123,7 +123,7 @@ export const initialState = {
           background: "",
           price: 15,
           quantity: 7,
-          seller: "Le vendeur 2"
+          seller: 2
         },
         {
           id: 3,
@@ -134,7 +134,7 @@ export const initialState = {
           background: "",
           price: 15,
           quantity: 7,
-          seller: "Le vendeur 2"
+          seller: 2
         },
         {
           id: 4,
@@ -145,7 +145,7 @@ export const initialState = {
           background: "",
           price: 15,
           quantity: 7,
-          seller: "Le vendeur 2"
+          seller: 2
         },
         {
           id: 5,
@@ -156,7 +156,7 @@ export const initialState = {
           background: "",
           price: 15,
           quantity: 7,
-          seller: "Le vendeur 2"
+          seller: 2
         },
         {
           id: 6,
@@ -167,7 +167,7 @@ export const initialState = {
           background: "",
           price: 15,
           quantity: 7,
-          seller: "Le vendeur 2"
+          seller: 2
         },
         {
           id: 7,
@@ -178,7 +178,7 @@ export const initialState = {
           background: "",
           price: 15,
           quantity: 7,
-          seller: "Le vendeur 2"
+          seller: 2
         },
         {
           id: 8,
@@ -189,7 +189,7 @@ export const initialState = {
           background: "",
           price: 15,
           quantity: 7,
-          seller: "Le vendeur 2"
+          seller: 2
         },
         {
           id: 9,
@@ -200,7 +200,7 @@ export const initialState = {
           background: "",
           price: 15,
           quantity: 7,
-          seller: "Le vendeur 2"
+          seller: 2
         }
       ]
     },

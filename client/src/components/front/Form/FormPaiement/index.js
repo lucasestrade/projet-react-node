@@ -1,8 +1,16 @@
 import React from 'react';
 import Submit from '../../Cta/Submit';
 import Input from '../../Input';
+import { useHistory } from 'react-router-dom';
 
-function FormPaiement(){
+function FormPaiement({redirect}){
+
+    let history = useHistory();
+
+    function onClickSubmitPaiement(event){
+        event.preventDefault();
+        history.push(redirect);
+    }
 
     return(
         <form className="form-paiement flex column">
@@ -21,11 +29,6 @@ function FormPaiement(){
         </form>
     );
 
-}
-
-function onClickSubmitPaiement(event){
-    event.preventDefault();
-    alert("submitted")
 }
 
 export default FormPaiement

@@ -66,12 +66,20 @@ const providers = {
             TITLE : "Inscription"
         },
         PAIEMENT : {
-            PATH : "/paiement",
+            PATH : "/paiement/:id",
             TITLE : "Paiement"
         },
         PSP : {
             PATH : "/psp",
             TITLE : "Validation de la transaction..."
+        },
+        VALIDATE_PAIEMENT : {
+            PATH : "/validate_paiement/:id",
+            TITLE : "Commande validée"
+        },
+        CANCEL_PAIEMENT : {
+            PATH : "/cancel_paiement/:id",
+            TITLE : "Commande annulée"
         }
     }
 }
