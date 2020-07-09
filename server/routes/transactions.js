@@ -14,6 +14,7 @@ router.post("/", (req, res) => {
         Merchant.findByPk(req.body.MerchantId)
         .then((data) => {
             res_trans ? res.json({
+              id: res_trans.id,
               status: res_trans.status,
               price: res_trans.price,
               MerchantId : res_trans.MerchantId,
