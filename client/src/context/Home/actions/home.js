@@ -1,6 +1,9 @@
 export function sendSeller1Basket(price){
-    fetch("http://localhost:8889/transactions", {
+    let headers = new Headers();
+    headers.append("Content-Type", "application/json");
+    fetch("http://localhost:5000/transactions", {
         method: "POST",
+        headers: headers,
         body: JSON.stringify({
             status: "ENCOURS",
             price: price,
@@ -8,9 +11,6 @@ export function sendSeller1Basket(price){
         })
     }).then(res => res.json())
     .then(function(res){
-        window.location = "/paiement/dzeafzefzae";
-    })
-    .catch(function(){
         window.localStorage.setItem("dzeafzefzae", JSON.stringify({
             price: 12,
             validation_url: "/validate_paiement/validationurl",
@@ -18,11 +18,22 @@ export function sendSeller1Basket(price){
         }))
         window.location = "/paiement/dzeafzefzae";
     })
+    /*.catch(function(){
+        window.localStorage.setItem("dzeafzefzae", JSON.stringify({
+            price: 12,
+            validation_url: "/validate_paiement/validationurl",
+            cancel_url : "/cancel_paiement/cancelurl"
+        }))
+        window.location = "/paiement/dzeafzefzae";
+    })*/
 }
 
 export function sendSeller2Basket(price){
-    fetch("http://localhost:8889/transactions", {
+    let headers = new Headers();
+    headers.append("Content-Type", "application/json");
+    fetch("http://localhost:5000/transactions", {
         method: "POST",
+        headers: headers,
         body: JSON.stringify({
             status: "ENCOURS",
             price: price,
@@ -30,9 +41,6 @@ export function sendSeller2Basket(price){
         })
     }).then(res => res.json())
     .then(function(res){
-        window.location = "/paiement/dzeafzefzae";
-    })
-    .catch(function(){
         window.localStorage.setItem("dzeafzefzae", JSON.stringify({
             price: 12,
             validation_url: "/validate_paiement/validationurl",
@@ -40,4 +48,12 @@ export function sendSeller2Basket(price){
         }))
         window.location = "/paiement/dzeafzefzae";
     })
+    /*.catch(function(){
+        window.localStorage.setItem("dzeafzefzae", JSON.stringify({
+            price: 12,
+            validation_url: "/validate_paiement/validationurl",
+            cancel_url : "/cancel_paiement/cancelurl"
+        }))
+        window.location = "/paiement/dzeafzefzae";
+    })*/
 }

@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import PaiementContext from "../context/Paiement";
-import { changePaiementStatus } from "../context/Paiement/actions/paiement.js";
+import { getMerchantTokenByTransac, changePaiementStatus } from "../context/Paiement/actions/paiement.js";
 
 const usePaiement = () => {
   const {
@@ -9,8 +9,9 @@ const usePaiement = () => {
   } = useContext(PaiementContext);
 
   const actions = {
-    changePaiementStatus: function (status) {
-        changePaiementStatus(status);
+    changePaiementStatus: async function (id, status) {
+        let token = await getMerchantTokenByTransac(id);
+        changePaiementStatus(status, id, token);
     },
   };
 

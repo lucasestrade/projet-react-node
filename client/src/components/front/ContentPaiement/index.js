@@ -12,7 +12,7 @@ function ContentPaiement(){
     let transacInfos = JSON.parse(window.localStorage.getItem(params.id));
 
     function onClickCancelPaiement(){
-        actions.changePaiementStatus("CANCEL");
+        actions.changePaiementStatus(params.id, "CANCEL");
         history.push(transacInfos.cancel_url);
     }
 
