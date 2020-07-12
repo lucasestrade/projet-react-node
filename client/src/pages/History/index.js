@@ -17,7 +17,7 @@ function History({ title }) {
             <ContentHeader>
                 Historique
             </ContentHeader>
-            <div className="flex">
+            <div className="flex history-content">
                 <SidebarProvider>
                     <ContentSidebar />
                 </SidebarProvider>

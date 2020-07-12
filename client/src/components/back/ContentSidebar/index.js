@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { SidebarProvider } from "../../../context/SideBar";
 import Redirect from '../../front/Cta/Redirect';
 import providers from "../../../providers/providers";
 
@@ -10,7 +9,7 @@ function ContentSidebar() {
 
     return (
         <div>
-            <div class="flex column">
+            <div className="flex column">
                 <Redirect to={providers.routes.DASHBOARD.PATH} title={providers.routes.DASHBOARD.TITLE}>
                     {providers.routes.DASHBOARD.TITLE}
                 </Redirect>
