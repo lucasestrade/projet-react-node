@@ -1,8 +1,10 @@
 const express = require("express");
 const sequelize = require("../lib/sequelize");
 const { QueryTypes } = require("sequelize");
+const createToken = require("../lib/auth").createToken;
 const Transaction = require("../models/sequelize/Transaction");
 const Merchant = require("../models/sequelize/Merchant");
+const Credential = require("../models/sequelize/Credential");
 const { ValidationError, Op } = require("sequelize");
 //const verifyToken = require("../middlewares/verifyToken");
 //const { Article } = require("../models/sequelize");
@@ -74,9 +76,70 @@ router.get("/", (req, res) => {
 });
 
 // GET
+router.get("/stats", (req, res) => {
+  const { merchantId } = req.query;
+  if(merchantId){
+    var requete = Transaction.findAll({
+      where:{
+        MerchantId: merchantId,
+      },
+      paranoid: false
+    });
+  }else{
+    var requete = Transaction.findAll();
+  }
+  requete
+    .then((data) => {
+      var prices = [];
+      var dates = [];
+      data.forEach((transaction) => {
+        prices.push(transaction.price);
+        dates.push(transaction.createdAt);
+      })
+      res.json({
+        prices:prices,
+        dates:dates
+      });
+    
+    })
+    .catch((err) => res.sendStatus(500));
+});
+
+// GET
 router.get("/:id", (req, res) => {
   Transaction.findByPk(req.params.id)
-    .then((data) => (data ? res.json(data) : res.sendStatus(404)))
+    .then((data) => {
+      res_trans = data;
+      Credential.findOne({
+        where: { MerchantId : res_trans.MerchantId },
+      })
+        .then((data) => {
+          if (!data) {
+            return Promise.reject("invalid");
+          } else {
+            return Promise.resolve(data);
+          }
+        })
+        .then((credential) =>
+          createToken({ client_token: credential.client_token }).then((token) =>
+            res.json({
+                id: res_trans.id,
+                status: res_trans.status,
+                price: res_trans.price,
+                MerchantId : res_trans.MerchantId,
+                token : token
+              })
+          )
+        )
+        .catch((err) =>
+          err === "invalid"
+            ? res.status(400).json({
+                client_token: "Invalid credentials",
+                client_secret: "Invalid credentials",
+              })
+            : console.error(err) || res.sendStatus(500)
+        );
+    })
     .catch((err) => res.sendStatus(500));
 });
 
