@@ -30,8 +30,8 @@ Content-Type: application/json
 {
   
   "status": "ENCOURS",
-  "price": 11.00,
-  "MerchantId" : 1
+  "price": 15.00,
+  "MerchantId" : 3
 }
 
 ###
@@ -41,15 +41,18 @@ GET http://localhost:5000/transactions?billing_adress=superman2-k@hotmail.fr
 GET http://localhost:5000/transactions/1
 
 ###
+GET http://localhost:5000/transactions/stats?merchantId=1
+
+###
 POST http://localhost:5000/merchants
 Content-Type: application/json
 
 {
-  "name": "test_name2",
+  "name": "test_name",
   "url_validation": "test_url_validation",
   "url_echec": "test_url_echec",
   "kbis": "test_kbis",
-  "email": "email2@test.fr",
+  "email": "email@test.fr",
   "adresse": "test_adresse",
   "repayment_currency": "test_repayment_currency",
   "verify": false

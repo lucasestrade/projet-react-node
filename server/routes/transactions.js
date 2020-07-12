@@ -57,11 +57,43 @@ router.get("/", (req, res) => {
 });
 
 // GET
+router.get("/stats", (req, res) => {
+  const { merchantId } = req.query;
+  if(merchantId){
+    var requete = Transaction.findAll({
+      where:{
+        MerchantId: merchantId,
+      },
+      paranoid: false
+    });
+  }else{
+    var requete = Transaction.findAll();
+  }
+  requete
+    .then((data) => {
+      var prices = [];
+      var dates = [];
+      data.forEach((transaction) => {
+        prices.push(transaction.price);
+        dates.push(transaction.createdAt);
+      })
+      res.json({
+        prices:prices,
+        dates:dates
+      });
+    
+    })
+    .catch((err) => res.sendStatus(500));
+});
+
+// GET
 router.get("/:id", (req, res) => {
   Transaction.findByPk(req.params.id)
     .then((data) => (data ? res.json(data) : res.sendStatus(404)))
     .catch((err) => res.sendStatus(500));
 });
+
+
 
 // PUT
 router.put("/:id", async (req, res) => {
