@@ -44,6 +44,25 @@ GET http://localhost:5000/transactions/1
 GET http://localhost:5000/transactions/stats?merchantId=1
 
 ###
+PUT http://localhost:5000/transactions/1
+Content-Type: application/json
+
+{
+  "status": "TERMINER",
+  "price": "10"
+}
+
+###
+PUT http://localhost:5000/secure/transactions/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRfdG9rZW4iOiJ0ZXN0X2NsaWVudF90b2tlbiIsImlhdCI6MTU5NDU2MzEyOCwiZXhwIjoxNTk0NTY2NzI4fQ.IQtF7vmnm6gkiFctZOb-awL_zdtvn5xvVjMU7m-UeFI
+Content-Type: application/json
+
+{
+  "status": "ENCOURS",
+  "price": "20"
+}
+
+###
 POST http://localhost:5000/merchants
 Content-Type: application/json
 
@@ -73,7 +92,8 @@ Content-Type: application/json
 
 {
   "client_token": "test_client_token",
-  "client_secret": "test_client_secret"
+  "client_secret": "test_client_secret",
+  "MerchantId": 1
 
 }
 
@@ -81,7 +101,7 @@ Content-Type: application/json
 GET http://localhost:5000/credentials?client_token=test_client_token
 
 ###
-GET http://localhost:5000/credentials/1
+GET http://localhost:5000/credentials/2
 
 ###
 POST http://localhost:5000/credential_check
