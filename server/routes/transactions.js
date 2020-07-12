@@ -1,6 +1,8 @@
 const express = require("express");
+const createToken = require("../lib/auth").createToken;
 const Transaction = require("../models/sequelize/Transaction");
 const Merchant = require("../models/sequelize/Merchant");
+const Credential = require("../models/sequelize/Credential");
 const { ValidationError, Op } = require("sequelize");
 //const verifyToken = require("../middlewares/verifyToken");
 //const { Article } = require("../models/sequelize");
@@ -89,7 +91,38 @@ router.get("/stats", (req, res) => {
 // GET
 router.get("/:id", (req, res) => {
   Transaction.findByPk(req.params.id)
-    .then((data) => (data ? res.json(data) : res.sendStatus(404)))
+    .then((data) => {
+      res_trans = data;
+      Credential.findOne({
+        where: { MerchantId : res_trans.MerchantId },
+      })
+        .then((data) => {
+          if (!data) {
+            return Promise.reject("invalid");
+          } else {
+            return Promise.resolve(data);
+          }
+        })
+        .then((credential) =>
+          createToken({ client_token: credential.client_token }).then((token) =>
+            res.json({
+                id: res_trans.id,
+                status: res_trans.status,
+                price: res_trans.price,
+                MerchantId : res_trans.MerchantId,
+                token : token
+              })
+          )
+        )
+        .catch((err) =>
+          err === "invalid"
+            ? res.status(400).json({
+                client_token: "Invalid credentials",
+                client_secret: "Invalid credentials",
+              })
+            : console.error(err) || res.sendStatus(500)
+        );
+    })
     .catch((err) => res.sendStatus(500));
 });
 

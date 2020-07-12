@@ -4,7 +4,7 @@ const createToken = (payload) => {
   return new Promise((resolve, reject) => {
     jwt.sign(
       payload,
-      "" +process.env.JWT_SECRET,
+      "MyBestSecret",
       {
         algorithm: "HS256",
         expiresIn: 3600,
@@ -23,7 +23,7 @@ const createToken = (payload) => {
 
 const verifyToken = async (token) => {
   return new Promise((resolve, reject) => {
-    jwt.verify(token, process.env.JWT_SECRET, (err, decodedToken) => {
+    jwt.verify(token, "MyBestSecret", (err, decodedToken) => {
       if (err) {
         reject();
       } else {
