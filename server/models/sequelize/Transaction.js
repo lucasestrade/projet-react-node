@@ -9,6 +9,7 @@ Transaction.init(
     delivery_adress: DataTypes.STRING,
     status: DataTypes.STRING,
     price: DataTypes.FLOAT,
+    date: DataTypes.DATEONLY,
   },
   {
     sequelize,

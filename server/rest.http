@@ -35,13 +35,16 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:5000/transactions?billing_adress=superman2-k@hotmail.fr
+GET http://localhost:5000/transactions?createdAt=2020-07-12
 
 ###
 GET http://localhost:5000/transactions/1
 
 ###
 GET http://localhost:5000/transactions/stats?merchantId=1
+
+###
+GET http://localhost:5000/transactions/stats/date
 
 ###
 PUT http://localhost:5000/transactions/1
