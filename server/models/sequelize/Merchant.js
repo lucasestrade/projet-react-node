@@ -22,6 +22,16 @@ Merchant.init(
         },
       },
     },
+    contact:  {
+      type: DataTypes.STRING,
+      allowNull: true,
+      unique: true,
+      validate: {
+        isEmail: {
+          msg: "Email is not valid",
+        },
+      },
+    },
     adresse : DataTypes.STRING,
     repayment_currency: DataTypes.STRING,
     verify: {
@@ -63,3 +73,5 @@ Credential.belongsTo(Merchant); // Article.Client
 
 
 module.exports = Merchant;
+
+

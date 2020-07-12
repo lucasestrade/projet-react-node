@@ -1,4 +1,6 @@
 const express = require("express");
+const sequelize = require("../lib/sequelize");
+const { QueryTypes } = require("sequelize");
 const Transaction = require("../models/sequelize/Transaction");
 const Merchant = require("../models/sequelize/Merchant");
 const { ValidationError, Op } = require("sequelize");
@@ -8,7 +10,21 @@ const router = express.Router();
 
 // POST
 router.post("/", (req, res) => {
-  Transaction.create(req.body)
+  var today = new Date();
+  var dd = String(today.getDate()).padStart(2, '0');
+  var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+  var yyyy = today.getFullYear();
+  date = yyyy + '/' + mm + '/' + dd;
+  Transaction.create(
+      {
+        billing_adress:req.body.billing_adress,
+        delivery_adress:req.body.delivery_adress,
+        status:req.body.status,
+        price:req.body.price,
+        MerchantId:req.body.MerchantId,
+        date: date
+      }
+    )
     .then((data) => {
         res_trans = data;
         Merchant.findByPk(req.body.MerchantId)
@@ -17,6 +33,7 @@ router.post("/", (req, res) => {
               id: res_trans.id,
               status: res_trans.status,
               price: res_trans.price,
+              date: res_trans.date,
               MerchantId : res_trans.MerchantId,
               url_validation: data.url_validation,
               url_echec: data.url_echec
@@ -59,6 +76,14 @@ router.get("/", (req, res) => {
 // GET
 router.get("/:id", (req, res) => {
   Transaction.findByPk(req.params.id)
+    .then((data) => (data ? res.json(data) : res.sendStatus(404)))
+    .catch((err) => res.sendStatus(500));
+});
+
+
+// GET
+router.get("/stats/date", (req, res) => {
+  sequelize.query("SELECT COUNT(*) as nb,date FROM `Transactions` GROUP BY date", { type: QueryTypes.SELECT })
     .then((data) => (data ? res.json(data) : res.sendStatus(404)))
     .catch((err) => res.sendStatus(500));
 });
