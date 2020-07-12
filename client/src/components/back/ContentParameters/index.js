@@ -8,7 +8,7 @@ function ContentParameters() {
     })
 
     return (
-        <div>
+        <div className="parameters-card-content">
             <FormParameters/>
         </div>
     )

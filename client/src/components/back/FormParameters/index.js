@@ -41,6 +41,7 @@ function FormParameters() {
 
     return (
         <div className="form-parameters-card">
+            <h2>Modification des informations</h2>
             <form onSubmit={submitParameters}>
                 <ContentInput type='text' label='Nom' onChange={onChangeName} placeholder={parameters.name} />
                 <ContentInput type='text' label='Prénom' onChange={onChangeFirstname} placeholder={parameters.firstname} />
@@ -51,7 +52,7 @@ function FormParameters() {
                 <ContentInput type='text' label='Url annulation' onChange={onChangeAnnulation} placeholder={parameters.annulation} />
                 <ContentInput type='number' label='Remboursement sur les produits' onChange={onChangeRefund} placeholder={parameters.refund} />
 
-                <input type="submit" value="Modifier" />
+                <input className="button-modifier" type="submit" value="Modifier" />
             </form>
         </div>
     )

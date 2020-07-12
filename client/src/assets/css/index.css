@@ -394,4 +394,107 @@ header .phone-menu-filter {
   margin: 0;
   padding: 10px;
 }
+
+.history-content .history-card-content .history-card .history-button {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.history-content .history-card-content .history-card .history-button .button-refund {
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.history-content .history-card-content .history-card .history-button .button-refund:hover {
+  background-color: lightgray;
+}
+
+.parameters-card-content {
+  width: 80%;
+}
+
+.parameters-card-content .form-parameters-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.parameters-card-content .form-parameters-card form input {
+  margin: 10px;
+}
+
+.parameters-card-content .form-parameters-card form .button-modifier {
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.parameters-card-content .form-parameters-card form .button-modifier:hover {
+  background-color: lightgray;
+}
+
+.login-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.login-content .login-card-content {
+  margin: 50px;
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.login-content .login-card-content form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.login-content .login-card-content form div {
+  margin: 10px;
+}
+
+.login-content .login-card-content form .button-connexion {
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.login-content .login-card-content form .button-connexion:hover {
+  background-color: lightgray;
+}
 /*# sourceMappingURL=index.css.map */
