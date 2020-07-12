@@ -9,7 +9,7 @@ sequelize
     alter: true
   })
   .then((result) => console.log("Sync OK"))
-  .catch((result) => console.error("Sync KO"));
+  .catch((result) => console.error(result));
 
 module.exports = {
   sequelize,
