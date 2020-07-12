@@ -1,15 +1,17 @@
 export const initialState = {
 
-  userInfo: 
-    {
-      name: 'Dupond',
-      firstname : 'Michel',
-      email : 'michel@mich.com',
-      contact: 'michelenterprise@mich.com',
-      confirmation: 'http://confimation',
-      annulation: 'http://annulation',
-      refund: 20
-    }
+  userInfo:
+  {
+    name: 'Dupond',
+    firstname: 'Michel',
+    email: 'michel@mich.com',
+    contact: 'michelenterprise@mich.com',
+    confirmation: 'confimation',
+    annulation: 'annulation',
+    publicKey: 'afzershsethg587q4gq6g4qs',
+    secret: 'affg4g+86s4gqs64g5s6d51g',
+    refund: 20
+  }
 };
 
 export const reducer = (state, action) => {
@@ -48,6 +50,18 @@ export const reducer = (state, action) => {
       return {
         ...state,
         annulation: action.payload,
+      };
+
+    case "CHANGE_FORM_PUBLIC":
+      return {
+        ...state,
+        publicKey: action.payload,
+      };
+
+    case "CHANGE_FORM_SECRET":
+      return {
+        ...state,
+        secret: action.payload,
       };
 
     case "CHANGE_FORM_REFUND":

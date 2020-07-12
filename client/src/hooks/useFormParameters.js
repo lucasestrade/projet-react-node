@@ -44,6 +44,18 @@ const useFormParameters = () => {
                 payload: annulation,
             });
         },
+        changeFormParamatersPublic: function (publicKey) {
+            dispatch({
+                type: "CHANGE_FORM_PUBLIC",
+                payload: publicKey,
+            });
+        },
+        changeFormParamatersSecret: function (secret) {
+            dispatch({
+                type: "CHANGE_FORM_SECRET",
+                payload: secret,
+            });
+        },
         changeFormParamatersRefund: function (refund) {
             dispatch({
                 type: "CHANGE_FORM_REFUND",
@@ -60,6 +72,8 @@ const useFormParameters = () => {
         getFormParamatersContact: () => parametersState.contact,
         getFormParamatersConfirmation: () => parametersState.confirmation,
         getFormParamatersAnnulation: () => parametersState.annulation,
+        getFormParametersPublic: () => parametersState.public,
+        getFormParametersSecret: () => parametersState.secret,
         getFormParamatersRefund: () => parametersState.refund
     };
 

@@ -31,6 +31,14 @@ function FormParameters() {
         actions.changeFormParamatersAnnulation(event.target.value);
     }
 
+    function onChangePublic(event) {
+        actions.changeFormParamatersPublic(event.target.value);
+    }
+
+    function onChangeSecret(event) {
+        actions.changeFormParamatersSecret(event.target.value);
+    }
+
     function onChangeRefund(event) {
         actions.changeFormParamatersRefund(event.target.value);
     }
@@ -43,14 +51,15 @@ function FormParameters() {
         <div className="form-parameters-card">
             <h2>Modification des informations</h2>
             <form onSubmit={submitParameters}>
-                <ContentInput type='text' label='Nom' onChange={onChangeName} placeholder={parameters.name} />
-                <ContentInput type='text' label='Prénom' onChange={onChangeFirstname} placeholder={parameters.firstname} />
-                <ContentInput type='email' label='Email' onChange={onChangeEmail} placeholder={parameters.email} />
-
-                <ContentInput type='text' label='Contact' onChange={onChangeContact} placeholder={parameters.contact} />
-                <ContentInput type='text' label='Url confirmation' onChange={onChangeConfirmation} placeholder={parameters.confirmation} />
-                <ContentInput type='text' label='Url annulation' onChange={onChangeAnnulation} placeholder={parameters.annulation} />
-                <ContentInput type='number' label='Remboursement sur les produits' onChange={onChangeRefund} placeholder={parameters.refund} />
+                <ContentInput type='text' label='Nom' onChange={onChangeName} value={parameters.name} />
+                <ContentInput type='text' label='Prénom' onChange={onChangeFirstname} value={parameters.firstname} />
+                <ContentInput type='email' label='Email' onChange={onChangeEmail} value={parameters.email} />
+                <ContentInput type='text' label='Contact' onChange={onChangeContact} value={parameters.contact} />
+                <ContentInput type='text' label='Url confirmation' onChange={onChangeConfirmation} value={parameters.confirmation} />
+                <ContentInput type='text' label='Url annulation' onChange={onChangeAnnulation} value={parameters.annulation} />
+                <ContentInput type='text' label='Clé publique' onChange={onChangePublic} value={parameters.publicKey} />
+                <ContentInput type='text' label='Clé secret' onChange={onChangeSecret} value={parameters.secret} />
+                <ContentInput type='number' label='Remboursement sur les produits' onChange={onChangeRefund} value={parameters.refund} />
 
                 <input className="button-modifier" type="submit" value="Modifier" />
             </form>
