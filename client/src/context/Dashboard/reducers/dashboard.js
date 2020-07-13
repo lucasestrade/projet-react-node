@@ -1,13 +1,15 @@
 export const initialState = {
-  avg: 0
+  avg: 0,
+  transacPerDate: []
 };
   
 export const reducer = (state, action) => {
     switch (action.type) {
-      case "CHANGE_PRICES_AVG":
+      case "CHANGE_DATAS":
         return {
           ...state,
-          avg: action.payload
+          avg: action.payload1,
+          transacPerDate: action.payload2
         }
       default:
         return state;

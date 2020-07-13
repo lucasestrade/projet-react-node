@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import DashboardContext from "../context/Dashboard";
-import { getPrices } from '../context/Dashboard/actions/dashboard';
+import { getPrices, getTransacPerDate } from '../context/Dashboard/actions/dashboard';
 
 const useDashboard = () => {
   const {
@@ -9,13 +9,15 @@ const useDashboard = () => {
   } = useContext(DashboardContext);
 
   const actions = {
-    setPricesAvg : async() => {
+    setDashboardDatas : async() => {
       let prices = await getPrices();
+      let transacPerDate = await getTransacPerDate();
       let sum = prices.reduce((previous, current) => current += previous);
       let avg = sum / prices.length;
       dispatch({
-        type: "CHANGE_PRICES_AVG",
-        payload: avg
+        type: "CHANGE_DATAS",
+        payload1: avg,
+        payload2: transacPerDate
       })
     }
   };
@@ -23,6 +25,9 @@ const useDashboard = () => {
   const selectors = {
     getPricesAverage : () => {
       return dashboardState.avg
+    },
+    getTransacPerDate : () => {
+      return dashboardState.transacPerDate
     }
   };
 
