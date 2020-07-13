@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import ParametersContext from "../context/Parameters";
+import { getParametersInfo } from "../context/Parameters/actions/parameters.js";
 
 const useFormParameters = () => {
     const {
@@ -61,11 +62,28 @@ const useFormParameters = () => {
                 type: "CHANGE_FORM_REFUND",
                 payload: refund,
             }); 
-        }
+        },
+        getParametersInfo: async function () {
+            let parametersInfo = await getParametersInfo();
+            let userCredential = await getParametersInfo();
+            dispatch({
+                type: "SET_PARAMETERS_INFO",
+                payload1: parametersInfo,
+                payload2: userCredential
+            });
+        },
+/*         getCredential: async function () {
+            let userCredential = await getParametersInfo();
+            dispatch({
+                type: "SET_CREDENTIAL",
+                payload: userCredential,
+            });
+        } */
     }
 
     const selectors = {
         getFormParameters: () => parametersState.userInfo,
+        getFormCredential: () => parametersState.userCredential,
         getFormParamatersName: () => parametersState.name,
         getFormParamatersFirstname: () => parametersState.firstname,
         getFormParamatersEmail: () => parametersState.email,

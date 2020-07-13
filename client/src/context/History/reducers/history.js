@@ -40,11 +40,11 @@ export const initialState = {
 
 export const reducer = (state, action) => {
   switch (action.type) {
-    /* case "CHANGE_HOME_LOADED":
+    case "SET_HISTORY_LIST":
       return {
         ...state,
-        isHomeLoaded: action.payload,
-      } */
+        history: action.payload,
+      }
     default:
       return state;
   }

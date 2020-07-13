@@ -8,9 +8,12 @@ export const initialState = {
     contact: 'michelenterprise@mich.com',
     confirmation: 'confimation',
     annulation: 'annulation',
+    refund: 20
+  },
+  userCredential:
+  {
     publicKey: 'afzershsethg587q4gq6g4qs',
     secret: 'affg4g+86s4gqs64g5s6d51g',
-    refund: 20
   }
 };
 
@@ -68,6 +71,19 @@ export const reducer = (state, action) => {
       return {
         ...state,
         refund: action.payload,
+      };
+
+    case "SET_PARAMETERS_INFO":
+      return {
+        ...state,
+        userInfo: action.payload1,
+        userCredential: action.payload2
+      };
+
+    case "SET_CREDENTIAL":
+      return {
+        ...state,
+        userCredential: action.payload,
       };
 
     default:

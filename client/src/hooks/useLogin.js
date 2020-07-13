@@ -9,13 +9,26 @@ const useLogin = () => {
   } = useContext(LoginContext);
 
   const actions = {
-    login: async function (id, status) {
-      login(status, id);
+    changeFormLoginEmail: function (email) {
+      dispatch({
+        type: "CHANGE_FORM_EMAIL",
+        payload: email,
+      });
     },
+    changeFormLoginPassword: function (password) {
+      dispatch({
+        type: "CHANGE_FORM_PASSWORD",
+        payload: password,
+      });
+    },
+    login: async function () {
+      login(loginState.email, loginState.password);
+    }
   };
 
   const selectors = {
-
+    getFormLoginEmail: () => loginState.email,
+    getFormLoginPassword: () => loginState.password
   };
 
   return { selectors, actions };

@@ -8,6 +8,7 @@ function ContentHistory() {
     
 
     useEffect(() => {
+        // actions.getHistoryList();
     })
 
     return(
