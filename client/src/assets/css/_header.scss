@@ -1,0 +1,76 @@
+header{
+    position: sticky;
+    top: 0;
+    z-index: 9998;
+    width: calc(100% - 60px);
+    background-color: $mainWhite;
+    box-shadow: $mainBoxShadow;
+    padding: 30px;
+
+    & .header{
+        width: $visibleWidth;
+        max-width: 100%;
+        margin: auto;
+
+        & .header-logo{
+            width: 60px;
+            fill: $mainColor;
+            transition: all $mainTransitionDuration;
+
+            &:hover{
+                @include icon-hover;
+            }
+        }
+
+        & .header-basket{
+            width: 30px;
+            fill: $mainColor;
+            transition: all $mainTransitionDuration;
+
+            &:hover{
+                @include icon-hover;
+            }
+        }
+
+        & .header-burgermenu{
+            width: 30px;
+            fill: $mainColor;
+            transition: all $mainTransitionDuration;
+
+            &:hover{
+                @include icon-hover;
+            }
+        }
+    }
+
+    & .phone-menu{
+        position: fixed;
+        z-index: 10000;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 250px;
+        max-width: 100%;
+        background-color: $mainWhite;
+
+        & .block-phone-menu-logo{
+            padding: 20px;
+
+            & .phone-menu-logo{
+                width: 80px;
+                fill: $mainColor;
+            }
+        }
+    }
+
+    & .phone-menu-filter{
+        position: fixed;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-color: $mainFilter;
+        border: none;
+    }
+}

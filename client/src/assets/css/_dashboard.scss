@@ -1,0 +1,17 @@
+.stat-card{
+    width: 200px;
+    text-align: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid $mainColor;
+
+    & label{
+        padding: 10px;
+    }
+
+    & p{
+        margin: 0;
+        padding: 10px;
+    }
+}

@@ -1,0 +1,46 @@
+button{
+    cursor: pointer;
+}
+
+.redirect{
+    position: relative;
+    font-weight: bold;
+    color: $mainColor;
+    transition: all $mainTransitionDuration;
+    text-decoration: none;
+
+    &:hover{
+        color: $secondaryColor;
+    }
+}
+
+.link{
+    padding: 10px;
+    text-align: center;
+
+    &:after{
+        content: "";
+        position: absolute;
+        width: 0%;
+        bottom: 0;
+        left: 50%;
+        height: 2px;
+        background-color: $mainColor;
+        border-radius: $mainBorderRadius;
+        transition: all $mainTransitionDuration;
+    }
+
+    &:hover{
+        &:after{
+            left: 25%;
+            width: 50%;
+        }
+    }
+}
+
+.cta-nude{
+    width: 40px;
+    margin: 10px;
+    background-color: transparent;
+    border: none;
+}
