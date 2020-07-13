@@ -3,6 +3,7 @@ import Home from '../pages/Home';
 import Home2 from '../pages/Home2';
 import Paiement from '../pages/Paiement';
 import PSP from '../pages/PSP';
+import Dashboard from '../pages/Dashboard';
 import CancelPaiement from '../pages/CancelPaiement';
 import ValidatePaiement from '../pages/ValidatePaiement';
 
@@ -36,5 +37,10 @@ export const routes = [
         path: providers.routes.CANCEL_PAIEMENT.PATH,
         title: providers.routes.CANCEL_PAIEMENT.TITLE,
         Component: CancelPaiement
+    },
+    {
+        path: "/dashboard",
+        title: "dashboard",
+        Component: Dashboard
     }
 ]
