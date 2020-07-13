@@ -7,7 +7,6 @@ import Dashboard from '../pages/Dashboard';
 import CancelPaiement from '../pages/CancelPaiement';
 import ValidatePaiement from '../pages/ValidatePaiement';
 import Register from '../pages/Register';
-import Dashboard from '../pages/Dashboard';
 import Parameters from '../pages/Parameters';
 import History from '../pages/History';
 import Login from '../pages/Login';
