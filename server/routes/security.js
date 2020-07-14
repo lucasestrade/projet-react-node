@@ -16,6 +16,7 @@ router.post("/login_check", (req, res) => {
       if (!data) {
         return Promise.reject("invalid");
       } else {
+        resUser=data;
         return bcrypt.compare(password, data.password).then((valid) => {
           if (!valid) {
             return Promise.reject("invalid");
@@ -27,7 +28,10 @@ router.post("/login_check", (req, res) => {
     })
     .then((user) =>
       createToken({ username: user.email }).then((token) =>
-        res.json({ token })
+        res.json({ 
+          token : token,
+          id: resUser.id
+        })
       )
     )
     .catch((err) =>
