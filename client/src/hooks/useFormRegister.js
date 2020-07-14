@@ -67,6 +67,7 @@ const useFormRegister = () => {
         payload: confirme,
       });
     },
+    
     submit: function () {
       submit(formRegisterState,
         function (name) {
