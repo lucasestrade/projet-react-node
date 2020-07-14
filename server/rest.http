@@ -71,10 +71,10 @@ Content-Type: application/json
 
 {
   "name": "test_name",
+  "firstname": "test_firstname",
   "url_validation": "test_url_validation",
   "url_echec": "test_url_echec",
   "kbis": "test_kbis",
-  "email": "email@test.fr",
   "adresse": "test_adresse",
   "repayment_currency": "test_repayment_currency",
   "verify": false
