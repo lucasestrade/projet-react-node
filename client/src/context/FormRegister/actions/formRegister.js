@@ -3,6 +3,10 @@ export function submit(datas, callback){
     let firstname = datas.firstname;
     let email = datas.email;
     let password = datas.password;
+    let contact = datas.contact;
+    let confirmation = datas.url_validation;
+    let annulation = datas.url_echec;
+    let refund = datas.repayment_currency;
 
     let headers = new Headers();
     headers.append("Content-Type", "application/json");
@@ -14,6 +18,10 @@ export function submit(datas, callback){
             firstname: firstname,
             email: email,
             password: password,
+            contact: contact,
+            url_validation: confirmation,
+            url_echec: annulation,
+            repayment_currency: refund,
             role: "MERCHANT"
         })
     }).then(res => res.json())
