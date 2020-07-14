@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import FormRegisterContext from "../context/FormRegister";
+import { submit } from "../context/FormRegister/actions/formRegister";
 
 const useFormRegister = () => {
   const {
@@ -37,6 +38,9 @@ const useFormRegister = () => {
         type: "CHANGE_FORM_CONFIRME",
         payload: confirme,
       });
+    },
+    submit: function(){
+      submit(formRegisterState);
     }
   };
 

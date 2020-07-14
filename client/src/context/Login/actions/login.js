@@ -10,6 +10,7 @@ export function login(email, password){
         })
     }).then(res => res.json())
     .then(function(res){
+        console.log(res);
         window.localStorage.setItem('jwt', res.token);
     })
 }

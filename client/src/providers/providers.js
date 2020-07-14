@@ -61,10 +61,6 @@ const providers = {
             PATH : "/login",
             TITLE : "Connexion"
         },
-        SIGNUP : {
-            PATH : "/signup",
-            TITLE : "Inscription"
-        },
         PAIEMENT : {
             PATH : "/paiement/:id",
             TITLE : "Paiement"

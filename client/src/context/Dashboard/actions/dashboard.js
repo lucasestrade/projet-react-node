@@ -1,6 +1,6 @@
 export function getPrices(){
 
-    return [1,2,2,2,2,2,2,2];
+    //return [1,2,2,2,2,2,2,2];
 
     let headers = new Headers();
     headers.append("Content-Type", "application/json");
@@ -14,14 +14,14 @@ export function getPrices(){
 }
 
 export function getTransacPerDate(){
-    return [{
+    /*return [{
         nb: 7,
         date: "2019-06-05"
       },
       {
         nb: 5,
         date: "2019-07-05"
-    }]
+    }]*/
 
     let headers = new Headers();
     headers.append("Content-Type", "application/json");

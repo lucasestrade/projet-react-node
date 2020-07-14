@@ -35,7 +35,7 @@ function RegisterForm() {
         let password = selectors.getFormRegisterPassword();
         let confirme = selectors.getFormRegisterConfirme();
         if(password === confirme) {
-            //bdd
+            actions.submit();
         }
     }
 

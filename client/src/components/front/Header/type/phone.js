@@ -41,8 +41,8 @@ function openMenu(burgerMenuClickAction){
                 <Redirect to={providers.routes.LOGIN.PATH} title={providers.routes.LOGIN.TITLE}>
                     {providers.routes.LOGIN.TITLE}
                 </Redirect>
-                <Redirect to={providers.routes.SIGNUP.PATH} title={providers.routes.SIGNUP.TITLE}>
-                    {providers.routes.SIGNUP.TITLE}
+                <Redirect to={providers.routes.REGISTER.PATH} title={providers.routes.REGISTER.TITLE}>
+                    {providers.routes.REGISTER.TITLE}
                 </Redirect>
             </div>
         </>
