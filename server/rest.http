@@ -46,7 +46,7 @@ GET http://localhost:5000/transactions/78
 GET http://localhost:5000/transactions/mongo/1
 
 ###
-GET http://localhost:5000/transactions/stats?merchantId=1
+GET http://localhost:5000/transactions/stats?merchantId=7
 
 ###
 GET http://localhost:5000/transactions/stats/date

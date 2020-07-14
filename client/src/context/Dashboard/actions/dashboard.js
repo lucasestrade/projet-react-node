@@ -19,7 +19,6 @@ export function getTransacPerDate(callback){
         headers: headers
     }).then(res => res.json())
     .then(function(res){
-        console.log(res);
         callback(res);
     }).catch(function(res){
         console.log(res);

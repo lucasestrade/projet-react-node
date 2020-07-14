@@ -88,6 +88,7 @@ router.get("/stats", (req, res) => {
   }
   requete
     .then((data) => {
+      console.log(data);
       var prices = [];
       var dates = [];
       data.forEach((transaction) => {
@@ -118,7 +119,7 @@ router.get("/mongo/:id", (req, res) => {
 
 // GET
 router.get("/stats/date", (req, res) => {
-  sequelize.query("SELECT COUNT(*) as nb,date FROM `Transactions` GROUP BY date", { type: QueryTypes.SELECT })
+  sequelize.query('SELECT COUNT(*) as nb,date FROM "Transactions" GROUP BY date', { type: QueryTypes.SELECT })
     .then((data) => {
       console.log(res.json(data));
       data ? res.json(data) : res.sendStatus(404);
