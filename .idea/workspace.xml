@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9c4bd9fe-bfa6-4977-843a-b60e59bd6ce0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/server/lib/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/db.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1dzxEVq7Hu6Vs1YWexjNzabJKx6" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mongo" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9c4bd9fe-bfa6-4977-843a-b60e59bd6ce0" name="Default Changelist" comment="" />
+      <created>1593441611316</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1593441611316</updated>
+      <workItem from="1593441614181" duration="1719000" />
+      <workItem from="1593511805618" duration="37000" />
+      <workItem from="1593615167924" duration="4883000" />
+      <workItem from="1593888622344" duration="197000" />
+      <workItem from="1594055245628" duration="4343000" />
+      <workItem from="1594232969153" duration="543000" />
+      <workItem from="1594473586365" duration="731000" />
+      <workItem from="1594571201996" duration="608000" />
+      <workItem from="1594588160607" duration="4386000" />
+      <workItem from="1594650209357" duration="769000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="272" y="-876" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594637116594">
+      <screen x="-287" y="-1080" width="1920" height="1080" />
+    </state>
+    <state x="272" y="-876" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900/-287.-1080.1920.1080@-287.-1080.1920.1080" timestamp="1594637116594" />
+    <state x="96" y="-912" key="MergeDialog" timestamp="1594233204522">
+      <screen x="-287" y="-1080" width="1920" height="1080" />
+    </state>
+    <state x="96" y="-912" key="MergeDialog/0.0.1440.900/-287.-1080.1920.1080@-287.-1080.1920.1080" timestamp="1594233204522" />
+    <state x="313" y="-773" key="MultipleFileMergeDialog" timestamp="1594233204560">
+      <screen x="-287" y="-1080" width="1920" height="1080" />
+    </state>
+    <state x="313" y="-773" key="MultipleFileMergeDialog/0.0.1440.900/-287.-1080.1920.1080@-287.-1080.1920.1080" timestamp="1594233204560" />
+  </component>
+</project>
