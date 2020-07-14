@@ -121,7 +121,10 @@ router.get("/mongo/:id", (req, res) => {
 // GET
 router.get("/stats/date", (req, res) => {
   sequelize.query("SELECT COUNT(*) as nb,date FROM `Transactions` GROUP BY date", { type: QueryTypes.SELECT })
-    .then((data) => (data ? res.json(data) : res.sendStatus(404)))
+    .then((data) => {
+      console.log(res.json(data));
+      data ? res.json(data) : res.sendStatus(404);
+    })
     .catch((err) => res.sendStatus(500));
 });
 

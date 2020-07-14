@@ -9,16 +9,21 @@ const useDashboard = () => {
   } = useContext(DashboardContext);
 
   const actions = {
-    setDashboardDatas : async() => {
-      let prices = await getPrices();
-      let transacPerDate = await getTransacPerDate();
-      let sum = prices.reduce((previous, current) => current += previous);
-      let avg = sum / prices.length;
-      dispatch({
-        type: "CHANGE_DATAS",
-        payload1: avg,
-        payload2: transacPerDate
-      })
+    setDashboardDatas : () => {
+      getPrices(function(prices){
+        getTransacPerDate(function(transacPerDate){
+          let avg = 0;
+          if(prices.length !== 0){
+            let sum = prices.reduce((previous, current) => current += previous);
+            avg = sum / prices.length;
+          }
+          dispatch({
+            type: "CHANGE_DATAS",
+            payload1: avg,
+            payload2: transacPerDate
+          })
+        });
+      });
     }
   };
 

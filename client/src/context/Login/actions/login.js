@@ -12,5 +12,7 @@ export function login(email, password){
     .then(function(res){
         console.log(res);
         window.localStorage.setItem('jwt', res.token);
+        window.localStorage.setItem('merchantId', res.id);
+        window.location = "/dashboard";
     })
 }
