@@ -9,6 +9,7 @@ class Merchant extends Model {}
 Merchant.init(
   {
     name: DataTypes.STRING,
+    firstname: DataTypes.STRING,
     url_validation:  DataTypes.STRING,
     url_echec:  DataTypes.STRING,
     kbis: DataTypes.STRING,
@@ -32,8 +33,7 @@ Merchant.init(
         },
       },
     },
-    adresse : DataTypes.STRING,
-    repayment_currency: DataTypes.STRING,
+    repayment_currency: DataTypes.INTEGER,
     verify: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
