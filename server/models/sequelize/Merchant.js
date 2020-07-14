@@ -33,7 +33,7 @@ Merchant.init(
         },
       },
     },
-    repayment_currency: DataTypes.INTEGER,
+    repayment_currency: DataTypesgit.INTEGER,
     verify: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
