@@ -4,6 +4,7 @@ const { ValidationError, Op } = require("sequelize");
 //const verifyToken = require("../middlewares/verifyToken");
 const { Transaction } = require("../models/sequelize");
 const { Credential } = require("../models/sequelize");
+const bcrypt = require("bcryptjs");
 const router = express.Router();
 
 // POST

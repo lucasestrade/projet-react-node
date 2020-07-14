@@ -2,6 +2,7 @@ const createToken = require("../lib/auth").createToken;
 const express = require("express");
 const router = express.Router();
 const User = require("../models/sequelize/User");
+const Merchant = require("../models/sequelize/Merchant");
 const Credential = require("../models/sequelize/Credential");
 const bcrypt = require("bcryptjs");
 
@@ -31,6 +32,45 @@ router.post("/login_check", (req, res) => {
         res.json({ 
           token : token,
           id: resUser.id
+        })
+      )
+    )
+    .catch((err) =>
+      err === "invalid"
+        ? res.status(400).json({
+            email: "Invalid credentials",
+            password: "Invalid credentials",
+          })
+        : console.error(err) || res.sendStatus(500)
+    );
+});
+
+// POST
+router.post("/login_merchant_check", (req, res) => {
+  const { email, password } = req.body;
+
+  Merchant.findOne({
+    where: { email },
+  })
+    .then((data) => {
+      if (!data) {
+        return Promise.reject("invalid");
+      } else {
+        resMerchant=data;
+        return bcrypt.compare(password, data.password).then((valid) => {
+          if (!valid) {
+            return Promise.reject("invalid");
+          } else {
+            return Promise.resolve(data);
+          }
+        });
+      }
+    })
+    .then((merchant) =>
+      createToken({ username: merchant.email }).then((token) =>
+        res.json({ 
+          token : token,
+          id: resMerchant.id
         })
       )
     )

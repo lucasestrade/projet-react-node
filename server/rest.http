@@ -28,10 +28,9 @@ POST http://localhost:5000/transactions
 Content-Type: application/json
 
 {
-  
   "status": "ENCOURS",
-  "price": 15.00,
-  "MerchantId" : 3
+  "price": 14.00,
+  "MerchantId" : 1
 }
 
 ###
@@ -39,6 +38,9 @@ GET http://localhost:5000/transactions?createdAt=2020-07-12
 
 ###
 GET http://localhost:5000/transactions/1
+
+###
+GET http://localhost:5000/transactions/mongo/1
 
 ###
 GET http://localhost:5000/transactions/stats?merchantId=1
@@ -71,12 +73,14 @@ Content-Type: application/json
 
 {
   "name": "test_name",
+  "email": "test2@test.fr",
+  "password": "test",
   "firstname": "test_firstname",
   "url_validation": "test_url_validation",
   "url_echec": "test_url_echec",
   "kbis": "test_kbis",
   "adresse": "test_adresse",
-  "repayment_currency": "test_repayment_currency",
+  "repayment_currency": 10,
   "verify": false
 
 }
@@ -124,4 +128,13 @@ Content-Type: application/json
 {
   "email": "superman3-k@hotmail.fr",
   "password": "superman"
+}
+
+###
+POST http://localhost:5000/login_merchant_check
+Content-Type: application/json
+
+{
+  "email": "test2@test.fr",
+  "password": "test"
 }
