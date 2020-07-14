@@ -30,6 +30,7 @@ router.post("/login_check", (req, res) => {
     .then((user) =>
       createToken({ username: user.email }).then((token) =>
         res.json({ 
+          isConnected: true,
           token : token,
           id: resUser.id
         })
@@ -53,7 +54,7 @@ router.post("/login_merchant_check", (req, res) => {
     where: { email },
   })
     .then((data) => {
-      if (!data) {
+      if (!data || !data.verify) {
         return Promise.reject("invalid");
       } else {
         resMerchant=data;
@@ -67,11 +68,19 @@ router.post("/login_merchant_check", (req, res) => {
       }
     })
     .then((merchant) =>
-      createToken({ username: merchant.email }).then((token) =>
-        res.json({ 
-          token : token,
-          id: resMerchant.id
-        })
+      createToken({ username: merchant.email }).then((token) => {
+        if(resMerchant.id){
+          res.json({
+            isConnected: true,
+            token : token,
+            id: resMerchant.id
+          })
+        }else{
+          res.json({ 
+            isConnected: false
+          })
+        }
+      }
       )
     )
     .catch((err) =>
