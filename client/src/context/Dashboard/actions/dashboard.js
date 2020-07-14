@@ -1,28 +1,17 @@
-export function getPrices(){
-
-    return [1,2,2,2,2,2,2,2];
-
+export function getPrices(callback){
     let headers = new Headers();
+    let merchantId = window.localStorage.getItem("merchantId");
     headers.append("Content-Type", "application/json");
-    fetch("http://localhost:5000/transactions/stats?merchantId=1", {
+    fetch("http://localhost:5000/transactions/stats?merchantId=" + merchantId, {
         method: "GET",
         headers: headers
     }).then(res => res.json())
     .then(function(res){
-        return res.prices;
+        callback(res.prices);
     })
 }
 
-export function getTransacPerDate(){
-    return [{
-        nb: 7,
-        date: "2019-06-05"
-      },
-      {
-        nb: 5,
-        date: "2019-07-05"
-    }]
-
+export function getTransacPerDate(callback){
     let headers = new Headers();
     headers.append("Content-Type", "application/json");
     fetch("http://localhost:5000/transactions/stats/date", {
@@ -30,6 +19,9 @@ export function getTransacPerDate(){
         headers: headers
     }).then(res => res.json())
     .then(function(res){
-        return res;
+        console.log(res);
+        callback(res);
+    }).catch(function(res){
+        console.log(res);
     })
 }

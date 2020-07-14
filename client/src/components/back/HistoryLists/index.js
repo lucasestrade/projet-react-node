@@ -29,7 +29,7 @@ function HistoryLists(props) {
                 </div>
             </div>
             <div className="history-button">
-                <button className="button-refund" onClick={actions.sendRefund()}> Rembourser </button>
+                <button className="button-refund" onClick={() => actions.sendRefund(props.id)}> Rembourser </button>
             </div>
         </div>
     )

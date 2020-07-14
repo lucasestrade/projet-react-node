@@ -1,8 +1,6 @@
 import { useContext } from "react";
 import ParametersContext from "../context/Parameters";
-import { getParametersInfo } from "../context/Parameters/actions/parameters.js";
-
-import { sendParameters } from "../context/Parameters/actions/parameters.js";
+import { getParametersInfo, getCredential, sendParameters, sendCredentials } from "../context/Parameters/actions/parameters.js";
 
 const useFormParameters = () => {
     const {
@@ -72,12 +70,14 @@ const useFormParameters = () => {
             }); 
         },
         getParametersInfo: async function () {
-            let parametersInfo = await getParametersInfo();
-            let userCredential = await getParametersInfo();
-            dispatch({
-                type: "SET_PARAMETERS_INFO",
-                payload1: parametersInfo,
-                payload2: userCredential
+            getParametersInfo(function(parametersInfo){
+                getCredential(function(userCredential){
+                    dispatch({
+                        type: "SET_PARAMETERS_INFO",
+                        payload1: parametersInfo,
+                        payload2: userCredential
+                    });
+                });
             });
         },
 /*         getCredential: async function () {
@@ -89,31 +89,35 @@ const useFormParameters = () => {
         } */
         sendParameters: async function () {
             sendParameters(
-                parametersState.name,
-                parametersState.firstname,
-                parametersState.confirmation,
-                parametersState.annulation,
-                parametersState.kbis,
-                parametersState.email,
-                parametersState.contact,
-                parametersState.refund
-                );
+                parametersState.userInfo.name,
+                parametersState.userInfo.firstname,
+                parametersState.userInfo.url_validation,
+                parametersState.userInfo.url_echec,
+                parametersState.userInfo.kbis,
+                parametersState.userInfo.email,
+                parametersState.userInfo.contact,
+                parametersState.userInfo.repayment_currency,
+            );
+            sendCredentials(
+                parametersState.userCredential[0].client_token,
+                parametersState.userCredential[0].client_secret
+            )
         }
     }
 
     const selectors = {
         getFormParameters: () => parametersState.userInfo,
         getFormCredential: () => parametersState.userCredential,
-        getFormParamatersName: () => parametersState.name,
-        getFormParamatersFirstname: () => parametersState.firstname,
-        getFormParamatersEmail: () => parametersState.email,
-        getFormParamatersContact: () => parametersState.contact,
-        getFormParamatersConfirmation: () => parametersState.confirmation,
-        getFormParamatersAnnulation: () => parametersState.annulation,
-        getFormParametersPublic: () => parametersState.public,
-        getFormParametersSecret: () => parametersState.secret,
-        getFormParamatersRefund: () => parametersState.refund,
-        getFormParamatersKabis: () => parametersState.kbis
+        getFormParamatersName: () => parametersState.userInfo.name,
+        getFormParamatersFirstname: () => parametersState.userInfo.firstname,
+        getFormParamatersEmail: () => parametersState.userInfo.email,
+        getFormParamatersContact: () => parametersState.userInfo.contact,
+        getFormParamatersConfirmation: () => parametersState.userInfo.url_validation,
+        getFormParamatersAnnulation: () => parametersState.userInfo.url_echec,
+        getFormParametersPublic: () => parametersState.userCredential[0].client_token,
+        getFormParametersSecret: () => parametersState.userCredential[0].client_secret,
+        getFormParamatersRefund: () => parametersState.userInfo.repayment_currency,
+        getFormParamatersKabis: () => parametersState.userInfo.kbis
     };
 
     return { selectors, actions };

@@ -7,11 +7,11 @@ function FormParameters() {
     const { selectors, actions } = useFormParameters();
 
     useEffect(() => {
-        // actions.getParametersInfo();
+        actions.getParametersInfo();
     }, [])
 
     let parameters = selectors.getFormParameters();
-    let credential = selectors.getFormCredential();
+    let credential = selectors.getFormCredential()[0] || {};
 
     function onChangeName(event) {
         actions.changeFormParamatersName(event.target.value);
@@ -50,13 +50,14 @@ function FormParameters() {
     }
 
     function onImageChange(event) {
-        let file = this.files[0];
+        let file = event.target.files[0];
+        
         if (file !== undefined) {
-            let isSizeOk = this.files[0].size <= 3000000;
+            let isSizeOk = file.size <= 3000000;
 
             if (isSizeOk) {
                 var base64;
-                let blob = this.files[0];
+                let blob = file;
                 let fileReader = new FileReader();
                 let fileReaderForBase64 = new FileReader();
 
@@ -93,10 +94,9 @@ function FormParameters() {
                     }
 
                     if (type !== "invalid") {
-                        console.log(base64); // l image en base 64
+                        actions.changeFormParamatersKabis(base64);
                     } else {
                         console.log("L'image est invalide");
-                        actions.changeFormParamatersKabis(event.target.value);
                     }
                 };
 
@@ -116,16 +116,16 @@ function FormParameters() {
         <div className="form-parameters-card">
             <h2>Modification des informations</h2>
             <form onSubmit={submitParameters}>
-                <ContentInput type='text' label='Nom' onChange={onChangeName} value={parameters.name} />
-                <ContentInput type='text' label='Prénom' onChange={onChangeFirstname} value={parameters.firstname} />
-                <ContentInput type='email' label='Email' onChange={onChangeEmail} value={parameters.email} />
-                <ContentInput type='text' label='Contact' onChange={onChangeContact} value={parameters.contact} />
+                <ContentInput type='text' label='Nom' onChange={onChangeName} defaultValue={parameters.name || ""} />
+                <ContentInput type='text' label='Prénom' onChange={onChangeFirstname} defaultValue={parameters.firstname || ""} />
+                <ContentInput type='email' label='Email' onChange={onChangeEmail} defaultValue={parameters.email || ""} />
+                <ContentInput type='text' label='Contact' onChange={onChangeContact} defaultValue={parameters.contact || ""} />
                 <ContentInput type="file" label="Téléchargement du KBIS" id="input-file" accept="image/*" name="profile-pic" onChange={onImageChange} />
-                <ContentInput type='text' label='Url confirmation' onChange={onChangeConfirmation} value={parameters.confirmation} />
-                <ContentInput type='text' label='Url annulation' onChange={onChangeAnnulation} value={parameters.annulation} />
-                <ContentInput type='text' label='Clé publique' onChange={onChangePublic} value={credential.publicKey} />
-                <ContentInput type='text' label='Clé secret' onChange={onChangeSecret} value={credential.secret} />
-                <ContentInput type='number' label='Remboursement sur les produits' onChange={onChangeRefund} value={parameters.refund} />
+                <ContentInput type='text' label='Url confirmation' onChange={onChangeConfirmation} defaultValue={parameters.url_validation || ""} />
+                <ContentInput type='text' label='Url annulation' onChange={onChangeAnnulation} defaultValue={parameters.url_echec || ""} />
+                <ContentInput type='text' label='Clé publique' onChange={onChangePublic} defaultValue={credential.client_token || ""} />
+                <ContentInput type='text' label='Clé secret' onChange={onChangeSecret} defaultValue={credential.client_secret || ""} />
+                <ContentInput type='number' label='Remboursement sur les produits' onChange={onChangeRefund} defaultValue={parameters.repayment_currency || ""} />
                 <input className="button-modifier" type="submit" value="Modifier" />
             </form>
         </div>

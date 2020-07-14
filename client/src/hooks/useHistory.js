@@ -10,14 +10,15 @@ const useHistory = () => {
 
     const actions = {
         getHistoryList: async function () {
-            let historyList = await getHistoryList();
-            dispatch({
-                type: "SET_HISTORY_LIST",
-                payload: historyList,
+            getHistoryList(function(historyList){
+                dispatch({
+                    type: "SET_HISTORY_LIST",
+                    payload: historyList,
+                });
             });
         },
-        sendRefund: async function () {
-            sendRefund(historyState.price, '4')
+        sendRefund: async function (id) {
+            sendRefund(historyState.price, id)
         }
 
     }

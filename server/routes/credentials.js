@@ -41,7 +41,17 @@ router.get("/", (req, res) => {
 
 // GET
 router.get("/:id", (req, res) => {
-  Credential.findByPk(req.params.id)
+  //Credential.findByPk(req.params.id)
+  const { MerchantId, transaction: transactionConditions, credential: credentialConditions, ...conditions } = req.query;
+  if (MerchantId) {
+    conditions.MerchantId = req.params.id;
+  }
+  console.log(conditions);
+
+  Credential.findAll({
+    where: conditions,
+    paranoid: false
+  })
     .then((data) => (data ? res.json(data) : res.sendStatus(404)))
     .catch((err) => res.sendStatus(500));
 });
@@ -52,7 +62,7 @@ router.put("/:id", async (req, res) => {
     const salt = await bcrypt.genSalt();
     req.body.password = await bcrypt.hash(req.body.password, salt);
   }
-  Credential.update(req.body, { returning: true, where: { id: req.params.id } })
+  Credential.update(req.body, { returning: true, where: { MerchantId: req.params.id } })
   .then(res.json({status:"updated"}))
     .catch((err) => res.sendStatus(500));
 });

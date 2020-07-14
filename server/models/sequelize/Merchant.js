@@ -13,7 +13,7 @@ Merchant.init(
     firstname: DataTypes.STRING,
     url_validation:  DataTypes.STRING,
     url_echec:  DataTypes.STRING,
-    kbis: DataTypes.STRING,
+    kbis: DataTypes.TEXT,
     email:  {
       type: DataTypes.STRING,
       allowNull: false,

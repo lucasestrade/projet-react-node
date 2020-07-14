@@ -1,6 +1,6 @@
 const Sequelize = require("sequelize");
 
-const connection = new Sequelize('mysql://root:root@localhost:8889/dbreact');
+const connection = new Sequelize('postgres://postgres:root@localhost:5433/dbreact');
 connection
   .authenticate()
   .then(() => console.log("connected to DB"))

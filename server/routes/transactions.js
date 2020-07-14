@@ -19,8 +19,6 @@ router.post("/", (req, res) => {
   date = yyyy + '-' + mm + '-' + dd;
   Transaction.create(
       {
-        billing_adress:req.body.billing_adress,
-        delivery_adress:req.body.delivery_adress,
         status:req.body.status,
         price:req.body.price,
         MerchantId:req.body.MerchantId,
@@ -121,7 +119,10 @@ router.get("/mongo/:id", (req, res) => {
 // GET
 router.get("/stats/date", (req, res) => {
   sequelize.query("SELECT COUNT(*) as nb,date FROM `Transactions` GROUP BY date", { type: QueryTypes.SELECT })
-    .then((data) => (data ? res.json(data) : res.sendStatus(404)))
+    .then((data) => {
+      console.log(res.json(data));
+      data ? res.json(data) : res.sendStatus(404);
+    })
     .catch((err) => res.sendStatus(500));
 });
 
