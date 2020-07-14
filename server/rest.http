@@ -2,7 +2,7 @@ POST http://localhost:5000/users
 Content-Type: application/json
 
 {
-  "email": "superman2-k@hotmail.fr",
+  "email": "superman3-k@hotmail.fr",
   "password": "superman",
   "role": "ADMIN"
 }
@@ -122,6 +122,6 @@ POST http://localhost:5000/login_check
 Content-Type: application/json
 
 {
-  "email": "superman-k@hotmail.fr",
+  "email": "superman3-k@hotmail.fr",
   "password": "superman"
 }
