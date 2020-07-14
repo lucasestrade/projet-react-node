@@ -10,6 +10,7 @@ import Register from '../pages/Register';
 import Parameters from '../pages/Parameters';
 import History from '../pages/History';
 import Login from '../pages/Login';
+import ListMerchant from '../pages/ListMerchant';
 
 export const routes = [
     {
@@ -66,6 +67,11 @@ export const routes = [
         path: providers.routes.LOGIN.PATH,
         title: providers.routes.LOGIN.TITLE,
         Component: Login
+    },
+    {
+        path: providers.routes.LIST_MERCHANT.PATH,
+        title: providers.routes.LIST_MERCHANT.TITLE,
+        Component: ListMerchant
     }
 
 ]

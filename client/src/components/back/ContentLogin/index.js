@@ -10,9 +10,16 @@ function ContentLogin() {
     useEffect(() => {
     })
 
+    function onChangeCheckbox(event){
+        let checked = event.target.checked;
+        actions.changeConnectionAdmin(checked);
+    }
+
     return(
         <div className="login-card-content">
             <LoginForm />
+            <label htmlFor="checkbox">Connexion admin</label>
+            <input id="checkbox" onChange={onChangeCheckbox} type="checkbox" />
         </div>
     )
 

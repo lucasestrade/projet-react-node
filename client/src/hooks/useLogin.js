@@ -22,7 +22,13 @@ const useLogin = () => {
       });
     },
     login: async function () {
-      login(loginState.email, loginState.password);
+      login(loginState.email, loginState.password, loginState.admin);
+    },
+    changeConnectionAdmin: function(isAdmin){
+      dispatch({
+        type: "CHANGE_CONNECTION_ADMIN",
+        payload: isAdmin,
+      });
     }
   };
 

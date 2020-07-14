@@ -92,6 +92,10 @@ const providers = {
         HISTORY : {
             PATH : "/history",
             TITLE : "Historique"
+        },
+        LIST_MERCHANT : {
+            PATH : "/list_merchant",
+            TITLE : "Liste des marchands"
         }
 
     }

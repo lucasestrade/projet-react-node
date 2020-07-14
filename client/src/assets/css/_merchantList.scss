@@ -1,0 +1,16 @@
+.merchant-card{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: lightgrey;
+    justify-content: center;
+
+    & .button-verify{
+        width: 100%;
+        background-color: $mainColor;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        color: white;
+    }
+}
