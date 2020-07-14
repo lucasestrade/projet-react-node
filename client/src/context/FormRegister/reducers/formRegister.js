@@ -38,6 +38,30 @@ export const reducer = (state, action) => {
         confirme: action.payload,
       };
 
+    case "CHANGE_FORM_CONTACT":
+      return {
+        ...state,
+        contact: action.payload
+      };
+
+    case "CHANGE_FORM_CONFIRMATION":
+      return {
+        ...state,
+        url_validation: action.payload
+      };
+
+    case "CHANGE_FORM_ANNULATION":
+      return {
+        ...state,
+          url_echec: action.payload
+      };
+
+    case "CHANGE_FORM_REFUND":
+      return {
+        ...state,
+          repayment_currency: action.payload
+      };
+
     default:
       return state;
   }
