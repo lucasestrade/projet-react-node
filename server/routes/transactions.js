@@ -8,7 +8,7 @@ const TransactionMongo = require("../models/Transaction");
 //const verifyToken = require("../middlewares/verifyToken");
 //const { Article } = require("../models/sequelize");
 const router = express.Router();
-
+const bcrypt = require("bcryptjs");
 
 // POST
 router.post("/", (req, res) => {
@@ -72,6 +72,36 @@ router.get("/", (req, res) => {
     paranoid: false
   })
     .then((data) => res.json(data))
+    .catch((err) => res.sendStatus(500));
+});
+
+// GET
+router.get("/stats", (req, res) => {
+  const { merchantId } = req.query;
+  if(merchantId){
+    var requete = Transaction.findAll({
+      where:{
+        MerchantId: merchantId,
+      },
+      paranoid: false
+    });
+  }else{
+    var requete = Transaction.findAll();
+  }
+  requete
+    .then((data) => {
+      var prices = [];
+      var dates = [];
+      data.forEach((transaction) => {
+        prices.push(transaction.price);
+        dates.push(transaction.date);
+      })
+      res.json({
+        prices:prices,
+        dates:dates
+      });
+
+    })
     .catch((err) => res.sendStatus(500));
 });
 

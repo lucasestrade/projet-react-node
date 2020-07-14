@@ -86,6 +86,16 @@ Content-Type: application/json
 }
 
 ###
+PUT http://localhost:5000/merchants/1
+Content-Type: application/json
+
+{
+  "name": "testtttt_name",
+  "password": "test"
+
+}
+
+###
 GET http://localhost:5000/merchants?name=test_name
 Content-Type: application/json
 
