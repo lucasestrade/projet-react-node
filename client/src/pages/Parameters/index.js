@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import ContentHeader from '../../components/front/ContentHeader';
-import { DashboardProvider } from '../../context/Dashboard';
+import { ParametersProvider } from '../../context/Parameters';
 import { SidebarProvider } from '../../context/SideBar';
-import ContentDashboard from '../../components/back/ContentDashboard';
+import ContentParameters from '../../components/back/ContentParameters';
 import ContentSidebar from '../../components/back/ContentSidebar';
 
 
-function Dashbord({ title }) {
+function Parameters({ title }) {
 
     useEffect(() => {
         document.title = title;
@@ -15,18 +15,18 @@ function Dashbord({ title }) {
     return (
         <section className="section-dashboad">
             <ContentHeader>
-                Dashboard
+                Parameters
             </ContentHeader>
             <div className="flex">
                 <SidebarProvider>
                     <ContentSidebar />
                 </SidebarProvider>
-                <DashboardProvider>
-                    <ContentDashboard />
-                </DashboardProvider>
+                <ParametersProvider>
+                    <ContentParameters />
+                </ParametersProvider>
             </div>
         </section>
     );
 }
 
-export default Dashbord;
+export default Parameters;

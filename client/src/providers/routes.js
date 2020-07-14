@@ -6,6 +6,10 @@ import PSP from '../pages/PSP';
 import Dashboard from '../pages/Dashboard';
 import CancelPaiement from '../pages/CancelPaiement';
 import ValidatePaiement from '../pages/ValidatePaiement';
+import Register from '../pages/Register';
+import Parameters from '../pages/Parameters';
+import History from '../pages/History';
+import Login from '../pages/Login';
 
 export const routes = [
     {
@@ -39,8 +43,29 @@ export const routes = [
         Component: CancelPaiement
     },
     {
-        path: "/dashboard",
-        title: "dashboard",
+        path: providers.routes.REGISTER.PATH,
+        title: providers.routes.REGISTER.TITLE,
+        Component: Register
+    },
+    {
+        path: providers.routes.DASHBOARD.PATH,
+        title: providers.routes.DASHBOARD.TITLE,
         Component: Dashboard
+    },
+    {
+        path: providers.routes.PARAMETERS.PATH,
+        title: providers.routes.PARAMETERS.TITLE,
+        Component: Parameters
+    },
+    {
+        path: providers.routes.HISTORY.PATH,
+        title: providers.routes.HISTORY.TITLE,
+        Component: History
+    },
+    {
+        path: providers.routes.LOGIN.PATH,
+        title: providers.routes.LOGIN.TITLE,
+        Component: Login
     }
+
 ]

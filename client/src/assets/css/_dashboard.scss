@@ -15,3 +15,23 @@
         padding: 10px;
     }
 }
+
+.content-dashboard {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    width: 80%;
+
+    & .content-avg {
+        & .stat-card {
+            margin-top: 20px;
+        }
+    }
+
+    & .content-chart {
+        margin-top: 50px;
+        width: 800px;
+        height: 800px;
+    }
+}
