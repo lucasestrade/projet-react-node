@@ -96,10 +96,6 @@ const providers = {
         HISTORY : {
             PATH : "/history",
             TITLE : "Historique"
-        },
-        LOGIN : {
-            PATH : "/login",
-            TITLE : "Connexion"
         }
 
     }

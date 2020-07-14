@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import HistoryContext from "../context/History";
-import { getHistoryList } from "../context/History/actions/history.js";
+import { getHistoryList, sendRefund } from "../context/History/actions/history.js";
 
 const useHistory = () => {
     const {
@@ -15,11 +15,16 @@ const useHistory = () => {
                 type: "SET_HISTORY_LIST",
                 payload: historyList,
             });
+        },
+        sendRefund: async function () {
+            sendRefund(historyState.price, '4')
         }
+
     }
 
     const selectors = {
-        getHistory: () => historyState.history
+        getHistory: () => historyState.history,
+        getPrice: () => historyState.price
     };
 
     return { selectors, actions };

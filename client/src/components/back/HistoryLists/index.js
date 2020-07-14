@@ -1,6 +1,9 @@
 import React from 'react';
+import useHistory from "../../../hooks/useHistory";
 
 function HistoryLists(props) {
+    const { selectors, actions } = useHistory();
+
     return (
         <div className="history-card">
             <div className="history-input">
@@ -26,7 +29,7 @@ function HistoryLists(props) {
                 </div>
             </div>
             <div className="history-button">
-                <button className="button-refund"> Rembourser </button>
+                <button className="button-refund" onClick={actions.sendRefund()}> Rembourser </button>
             </div>
         </div>
     )
