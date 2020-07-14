@@ -5,14 +5,14 @@ import useFormParameters from "../../../hooks/useFormParameters";
 function FormParameters() {
 
     const { selectors, actions } = useFormParameters();
-    
+
     useEffect(() => {
         // actions.getParametersInfo();
     }, [])
 
     let parameters = selectors.getFormParameters();
     let credential = selectors.getFormCredential();
-    
+
     function onChangeName(event) {
         actions.changeFormParamatersName(event.target.value);
     }
@@ -96,6 +96,7 @@ function FormParameters() {
                         console.log(base64); // l image en base 64
                     } else {
                         console.log("L'image est invalide");
+                        actions.changeFormParamatersKabis(event.target.value);
                     }
                 };
 
@@ -108,6 +109,7 @@ function FormParameters() {
 
     function submitParameters(event) {
         event.preventDefault();
+        actions.sendParameters()
     }
 
     return (

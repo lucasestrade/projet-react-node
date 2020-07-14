@@ -2,6 +2,8 @@ import { useContext } from "react";
 import ParametersContext from "../context/Parameters";
 import { getParametersInfo } from "../context/Parameters/actions/parameters.js";
 
+import { sendParameters } from "../context/Parameters/actions/parameters.js";
+
 const useFormParameters = () => {
     const {
         state: { parameters: parametersState },
@@ -63,6 +65,12 @@ const useFormParameters = () => {
                 payload: refund,
             }); 
         },
+        changeFormParamatersKabis: function (kbis) {
+            dispatch({
+                type: "CHANGE_FORM_KBIS",
+                payload: kbis,
+            }); 
+        },
         getParametersInfo: async function () {
             let parametersInfo = await getParametersInfo();
             let userCredential = await getParametersInfo();
@@ -79,6 +87,18 @@ const useFormParameters = () => {
                 payload: userCredential,
             });
         } */
+        sendParameters: async function () {
+            sendParameters(
+                parametersState.name,
+                parametersState.firstname,
+                parametersState.confirmation,
+                parametersState.annulation,
+                parametersState.kbis,
+                parametersState.email,
+                parametersState.contact,
+                parametersState.refund
+                );
+        }
     }
 
     const selectors = {
@@ -92,7 +112,8 @@ const useFormParameters = () => {
         getFormParamatersAnnulation: () => parametersState.annulation,
         getFormParametersPublic: () => parametersState.public,
         getFormParametersSecret: () => parametersState.secret,
-        getFormParamatersRefund: () => parametersState.refund
+        getFormParamatersRefund: () => parametersState.refund,
+        getFormParamatersKabis: () => parametersState.kbis
     };
 
     return { selectors, actions };

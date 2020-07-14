@@ -72,7 +72,12 @@ export const reducer = (state, action) => {
         ...state,
         refund: action.payload,
       };
-
+    case "CHANGE_FORM_KBIS":
+      return {
+        ...state,
+        kbis: action.payload,
+      };
+      
     case "SET_PARAMETERS_INFO":
       return {
         ...state,
