@@ -1,38 +1,6 @@
 export const initialState = {
 
   history: [
-    /*{
-      idCommande: 'DG0440KUYTKHJ',
-      date: '2020-02-02 15:52',
-      price: '35,45',
-      status: 'fini'
-    },
-    {
-      idCommande: 'DG0440KUYTKHJ',
-      date: '2020-02-02 15:52',
-      price: '35,45',
-      status: 'fini'
-    },
-    {
-      idCommande: 'DG0440KUYTKHJ',
-      date: '2020-02-02 15:52',
-      price: '35,45',
-      status: 'fini'
-    }
-    ,
-    {
-      idCommande: 'DG0440KUYTKHJ',
-      date: '2020-02-02 15:52',
-      price: '35,45',
-      status: 'fini'
-    }
-    ,
-    {
-      idCommande: 'DG0440KUYTKHJ',
-      date: '2020-02-02 15:52',
-      price: '35,45',
-      status: 'fini'
-    }*/
 
   ]
 
@@ -44,7 +12,43 @@ export const reducer = (state, action) => {
       return {
         ...state,
         history: action.payload,
-      }
+      };
+
+    case "CHANGE_FORM_CONTACT":
+      return {
+        ...state,
+        history: {
+          ...state.history,
+          contact: action.payload
+        }
+      };
+
+    case "CHANGE_FORM_CONFIRMATION":
+      return {
+        ...state,
+        history: {
+          ...state.history,
+          url_validation: action.payload
+        }
+      };
+
+    case "CHANGE_FORM_ANNULATION":
+      return {
+        ...state,
+        history: {
+          ...state.history,
+          url_echec: action.payload
+        }
+      };
+
+    case "CHANGE_FORM_REFUND":
+      return {
+        ...state,
+        history: {
+          ...state.history,
+          repayment_currency: action.payload
+        }
+      };
     default:
       return state;
   }

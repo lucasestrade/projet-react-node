@@ -27,6 +27,34 @@ const useFormRegister = () => {
         payload: email,
       });
     },
+
+
+    changeFormRegisterContact: function (contact) {
+      dispatch({
+        type: "CHANGE_FORM_CONTACT",
+        payload: contact,
+      });
+    },
+    changeFormRegisterConfirmation: function (confirmation) {
+      dispatch({
+        type: "CHANGE_FORM_CONFIRMATION",
+        payload: confirmation,
+      });
+    },
+    changeFormRegisterAnnulation: function (annulation) {
+      dispatch({
+        type: "CHANGE_FORM_ANNULATION",
+        payload: annulation,
+      });
+    },
+    changeFormRegisterRefund: function (refund) {
+      dispatch({
+        type: "CHANGE_FORM_REFUND",
+        payload: refund,
+      });
+    },
+
+
     changeFormRegisterPassword: function (password) {
       dispatch({
         type: "CHANGE_FORM_PASSWORD",
@@ -39,9 +67,9 @@ const useFormRegister = () => {
         payload: confirme,
       });
     },
-    submit: function(){
+    submit: function () {
       submit(formRegisterState,
-        function(name){
+        function (name) {
           postCredentials(name);
         });
     }
