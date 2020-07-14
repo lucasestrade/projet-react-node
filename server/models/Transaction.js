@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const db = require("../lib/db");
 
 const Schema = new mongoose.Schema(
   {
@@ -12,6 +13,6 @@ const Schema = new mongoose.Schema(
   }
 );
 
-const Transaction = mongoose.model("Transaction", Schema);
+const Transaction = db.model("Transaction", Schema);
 
 module.exports = Transaction;

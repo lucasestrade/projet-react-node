@@ -3,6 +3,7 @@ const { DataTypes, Model } = require("sequelize");
 const User = require("./User");
 const Transaction = require("./Transaction");
 const Credential = require("./Credential");
+const bcrypt = require("bcryptjs");
 
 // Generation du model
 class Merchant extends Model {}
@@ -32,6 +33,10 @@ Merchant.init(
           msg: "Email is not valid",
         },
       },
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     repayment_currency: DataTypes.INTEGER,
     verify: {
@@ -70,7 +75,10 @@ Merchant.hasMany(Credential); // Client.articles
 // MANY Credential TO ONE Merchant
 Credential.belongsTo(Merchant); // Article.Client
 
-
+Merchant.addHook("beforeCreate", async (merchant, options) => {
+  const salt = await bcrypt.genSalt();
+  merchant.password = await bcrypt.hash(merchant.password, salt);
+});
 
 module.exports = Merchant;
 
