@@ -15,6 +15,7 @@ function ContentHome(){
     })
 
     function onClickValidateBasket(el){
+        console.log(selectors.getPriceSeller1());
         actions.sendSeller1Basket(selectors.getPriceSeller1());
     }
 

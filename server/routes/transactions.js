@@ -19,8 +19,6 @@ router.post("/", (req, res) => {
   date = yyyy + '-' + mm + '-' + dd;
   Transaction.create(
       {
-        billing_adress:req.body.billing_adress,
-        delivery_adress:req.body.delivery_adress,
         status:req.body.status,
         price:req.body.price,
         MerchantId:req.body.MerchantId,

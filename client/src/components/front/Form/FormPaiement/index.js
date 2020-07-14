@@ -11,7 +11,7 @@ function FormPaiement({transacid}){
 
     function onClickSubmitPaiement(event){
         event.preventDefault();
-        actions.changePaiementStatus("VALIDATE");
+        actions.changePaiementStatus(transacid, "VALIDATE");
         history.push('/psp/' + transacid);
     }
 

@@ -6,9 +6,9 @@ function ProductCard(props){
     const { selectors, actions } = useHome();
 
     function addPrice(el){
-        if(el.target.dataset.seller === "Le vendeur 1" && selectors.getPriceSeller1() >= 0){
+        if(el.target.dataset.seller === "1" && selectors.getPriceSeller1() >= 0){
             actions.addPriceSeller1(el.target.dataset.price);
-        }else if(el.target.dataset.seller === "Le vendeur 2" && selectors.getPriceSeller2() >= 0){
+        }else if(el.target.dataset.seller === "2" && selectors.getPriceSeller2() >= 0){
             actions.addPriceSeller2(el.target.dataset.price);
         }
         let display = document.getElementById("product-id-" + el.target.dataset.productid);
@@ -17,9 +17,9 @@ function ProductCard(props){
 
     function removePrice(el){
         let display = document.getElementById("product-id-" + el.target.dataset.productid);
-        if(el.target.dataset.seller === "Le vendeur 1" && selectors.getPriceSeller1() > 0 && parseInt(display.innerHTML) > 0){
+        if(el.target.dataset.seller === "1" && selectors.getPriceSeller1() > 0 && parseInt(display.innerHTML) > 0){
             actions.removePriceSeller1(el.target.dataset.price, el.target.dataset.seller);
-        }else if(el.target.dataset.seller === "Le vendeur 2" && selectors.getPriceSeller2() > 0 && parseInt(display.innerHTML) > 0){
+        }else if(el.target.dataset.seller === "2" && selectors.getPriceSeller2() > 0 && parseInt(display.innerHTML) > 0){
             actions.removePriceSeller2(el.target.dataset.price, el.target.dataset.seller);
         }
         if(parseInt(display.innerHTML) > 0){

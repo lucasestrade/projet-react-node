@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import FormRegisterContext from "../context/FormRegister";
-import { submit } from "../context/FormRegister/actions/formRegister";
+import { submit, postCredentials } from "../context/FormRegister/actions/formRegister";
 
 const useFormRegister = () => {
   const {
@@ -40,7 +40,10 @@ const useFormRegister = () => {
       });
     },
     submit: function(){
-      submit(formRegisterState);
+      submit(formRegisterState,
+        function(name){
+          postCredentials(name);
+        });
     }
   };
 

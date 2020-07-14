@@ -1,20 +1,6 @@
 export const initialState = {
-
-  userInfo:
-  {
-    name: 'Dupond',
-    firstname: 'Michel',
-    email: 'michel@mich.com',
-    contact: 'michelenterprise@mich.com',
-    confirmation: 'confimation',
-    annulation: 'annulation',
-    refund: 20
-  },
-  userCredential:
-  {
-    publicKey: 'afzershsethg587q4gq6g4qs',
-    secret: 'affg4g+86s4gqs64g5s6d51g',
-  }
+  userInfo: {},
+  userCredential: [{}]
 };
 
 export const reducer = (state, action) => {
@@ -22,60 +8,90 @@ export const reducer = (state, action) => {
     case "CHANGE_FORM_NAME":
       return {
         ...state,
-        name: action.payload,
+        userInfo : {
+          ...state.userInfo,
+          name: action.payload
+        }
       };
 
     case "CHANGE_FORM_FIRSTNAME":
       return {
         ...state,
-        firstname: action.payload,
+        userInfo : {
+          ...state.userInfo,
+          firstname: action.payload
+        }
       };
 
     case "CHANGE_FORM_EMAIL":
       return {
         ...state,
-        email: action.payload,
+        userInfo : {
+          ...state.userInfo,
+          email: action.payload
+        }
       };
 
     case "CHANGE_FORM_CONTACT":
       return {
         ...state,
-        contact: action.payload,
+        userInfo : {
+          ...state.userInfo,
+          contact: action.payload
+        }
       };
 
     case "CHANGE_FORM_CONFIRMATION":
       return {
         ...state,
-        confirmation: action.payload,
+        userInfo : {
+          ...state.userInfo,
+          url_validation: action.payload
+        }
       };
 
     case "CHANGE_FORM_ANNULATION":
       return {
         ...state,
-        annulation: action.payload,
+        userInfo : {
+          ...state.userInfo,
+          url_echec: action.payload
+        }
       };
 
     case "CHANGE_FORM_PUBLIC":
       return {
         ...state,
-        publicKey: action.payload,
+        userCredential : [{
+          ...state.userCredential[0],
+          client_token: action.payload
+        }]
       };
 
     case "CHANGE_FORM_SECRET":
       return {
         ...state,
-        secret: action.payload,
+        userCredential : [{
+          ...state.userCredential[0],
+          client_secret: action.payload
+        }]
       };
 
     case "CHANGE_FORM_REFUND":
       return {
         ...state,
-        refund: action.payload,
+        userInfo : {
+          ...state.userInfo,
+          repayment_currency: action.payload
+        }
       };
     case "CHANGE_FORM_KBIS":
       return {
         ...state,
-        kbis: action.payload,
+        userInfo : {
+          ...state.userInfo,
+          kbis: action.payload
+        }
       };
       
     case "SET_PARAMETERS_INFO":

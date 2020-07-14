@@ -9,9 +9,8 @@ const usePaiement = () => {
   } = useContext(PaiementContext);
 
   const actions = {
-    changePaiementStatus: async function (id, status) {
-        let token = await getMerchantTokenByTransac(id);
-        changePaiementStatus(status, id, token);
+    changePaiementStatus: function (id, status) {
+        changePaiementStatus(status, id);
     },
   };
 

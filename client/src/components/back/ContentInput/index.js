@@ -6,7 +6,7 @@ function ContentInput(props) {
             <label>
                 {props.label}:
             </label>
-            <input type={props.type} onChange={props.onChange} value={props.value} />
+            <input type={props.type} onChange={props.onChange} defaultValue={props.defaultValue} />
         </div>
     );
 }

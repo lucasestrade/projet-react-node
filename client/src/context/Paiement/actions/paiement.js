@@ -1,8 +1,7 @@
-export function changePaiementStatus(status, transacId, token){
+export function changePaiementStatus(status, transacId){
     let headers = new Headers();
     headers.append("Content-Type", "application/json");
-    headers.append("Authorization", "Bearer " + token);
-    fetch("http://localhost:5000/secure/transactions/" + transacId, {
+    fetch("http://localhost:5000/transactions/" + transacId, {
         method: "PUT",
         headers: headers,
         body: JSON.stringify({
@@ -13,11 +12,11 @@ export function changePaiementStatus(status, transacId, token){
     })
 }
 
-export function getMerchantTokenByTransac(transacId){
+/*export function getMerchantTokenByTransac(transacId, callback){
     fetch("http://localhost:5000/transactions/" + transacId, {
         method: "GET"
     }).then(res => res.json())
     .then(function(res){
         return res.token;
     })
-}
+}*/
